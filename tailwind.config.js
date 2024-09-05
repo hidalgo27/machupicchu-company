@@ -14,7 +14,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['"Montserrat"', ...defaultTheme.fontFamily.sans],
+        'sans': ['"Lato"', ...defaultTheme.fontFamily.sans],
       },
     },
     colors: {
@@ -31,6 +31,7 @@ export default {
       cyan: colors.cyan,
       primary: '#7D8506',
       secondary: '#F9A825',
+      tertiary: '#343a40'
     },
     container: {
       center: true,

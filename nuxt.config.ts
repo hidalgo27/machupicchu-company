@@ -34,7 +34,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Montserrat: [400,700],  // Puedes especificar los pesos de las fuentes que necesites
+      Lato: [100, 300, 400, 700, 900],  // Puedes especificar los pesos de las fuentes que necesites
     }
   },
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-<!--    <Headers class="sticky top-0 sm:relative z-50"></Headers>-->
+    <Headers class=" top-0 absolute w-full  z-50"></Headers>
 
     <slot/>
 
