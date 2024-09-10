@@ -10,6 +10,7 @@ export default {
     "./app2.vue",
     "./error.vue",
     "./node_modules/vue-tailwind-datepicker/**/*.js",
+    './nuxt.config.{js,ts}',
   ],
   theme: {
     extend: {
@@ -29,9 +30,10 @@ export default {
       yellow: colors.yellow,
       fuchsia: colors.fuchsia,
       cyan: colors.cyan,
-      primary: '#7D8506',
+      primary: '#7c9aa3',
       secondary: '#F9A825',
-      tertiary: '#343a40'
+      tertiary: '#343a40',
+      transparent: 'transparent',
     },
     container: {
       center: true,

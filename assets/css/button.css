@@ -17,13 +17,13 @@
     @apply  py-3 px-10 text-white bg-gray-300
 }
 .btn-primary-outline {
-    @apply  py-3 float-right px-5 text-primary border-2 border-primary hover:bg-primary hover:text-white duration-300
+    @apply  py-3  px-5 text-primary border-2 border-primary hover:bg-primary hover:text-white duration-300
 }
 .btn-primary-outline:hover > img {
     @apply invert brightness-0
 }
 .btn-secondary-outline {
-    @apply  py-3 float-right px-5 text-secondary border-2 border-secondary hover:bg-secondary hover:text-white duration-300
+    @apply  py-3  px-5 text-secondary border-2 border-secondary hover:bg-secondary hover:text-white duration-300
 }
 .btn-ternary-outline {
     @apply  py-3 float-right px-5 text-gray-800 border-2 border-gray-800 hover:bg-gray-800 hover:text-white duration-300

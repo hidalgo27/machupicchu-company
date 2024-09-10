@@ -1,9 +1,9 @@
 <template>
-  <div class="">
+  <div class="section-v">
     <div class=" hidden sm:block">
-      <div class="container flex justify-between py-6 items-center">
-        <div class="flex items-end gap-4">
-          <nuxt-link to="/"><nuxt-img src="/images/logos/logo-mapi.svg" class="w-[150px] md:w-[270px]"></nuxt-img></nuxt-link>
+      <div class="container flex justify-between py-4 items-center">
+        <div class="flex gap-4">
+          <nuxt-link to="/"><nuxt-img src="/images/logos/logo-mapi.svg" class="w-[150px] md:w-[200px]"></nuxt-img></nuxt-link>
           <Typing></Typing>
         </div>
         <div class="md:hidden">

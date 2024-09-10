@@ -7,8 +7,8 @@
 <script setup lang="ts">
 
 const texts = [
-  { text: 'Let’s go to Ecuador.', color: 'text-primary' },
-  { text: 'Go with the Experts.', color: 'text-gray-500' },
+  { text: 'Let’s go to Ecuador.', color: 'text-secondary' },
+  { text: 'Go with the Experts.', color: 'text-gray-200' },
   // { text: 'Vamos a Ecuador.', color: 'text-secondary' },
   // { text: 'Go with the Experts.', color: 'text-gray-500' },
 ];
@@ -59,6 +59,7 @@ onMounted(() => {
   align-items: center;
   font-family: 'Courier New', Courier, monospace;
 }
+
 
 .cursor {
   font-weight: bold;
