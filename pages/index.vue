@@ -111,13 +111,13 @@
       <div class="col-span-8">
         <div class="grid grid-cols-2 items-center">
           <div class="items-center">
-            <nuxt-img src="http://gotoperu-20.s3-us-west-1.amazonaws.com/hotel/palaciodelInka_1637077181.jpg" class="w-full h-[400px] object-cover object-center"></nuxt-img>
-            <nuxt-img src="http://gotoperu-20.s3-us-west-1.amazonaws.com/hotel/aranwacuscoboutique_1637077211.jpg" class="w-full h-[300px] object-cover object-center"></nuxt-img>
-            <nuxt-img src="http://gotoperu-20.s3-us-west-1.amazonaws.com/hotel/MIRAFLORESPARK_1637077432.jpg" class="w-full h-[300px] object-cover object-center"></nuxt-img>
+            <nuxt-img src="/images/hotels/1.jpg" class="w-full h-[400px] object-cover object-center"></nuxt-img>
+            <nuxt-img src="/images/hotels/2.jpg" class="w-full h-[300px] object-cover object-center"></nuxt-img>
+            <nuxt-img src="/images/hotels/3.jpg" class="w-full h-[300px] object-cover object-center"></nuxt-img>
           </div>
           <div class="">
             <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full h-[400px] object-cover"></nuxt-img>
-            <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full object-cover"></nuxt-img>
+            <nuxt-img src="/images/hotels/5start.jpg" class="w-full object-cover"></nuxt-img>
           </div>
         </div>
       </div>
