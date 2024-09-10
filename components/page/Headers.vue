@@ -14,8 +14,10 @@
   <!--      <Nav></Nav>-->
         <div class="flex gap-8 items-center">
 
-            <nuxt-link to="/ecuador-travel-packages" class="menu-list" active-class="active">Ecuador Travel Packages</nuxt-link>
-            <nuxt-link to="/destinations" class="menu-list" active-class="active">Destinations</nuxt-link>
+<!--          <nuxt-link to="/ecuador-travel-packages" class="menu-list" active-class="active">Ecuador Travel Packages</nuxt-link>-->
+<!--          <nuxt-link to="/destinations" class="menu-list" active-class="active">Destinations</nuxt-link>-->
+            <nuxt-link to="#" class="menu-list" active-class="active">Ecuador Travel Packages</nuxt-link>
+            <nuxt-link to="#" class="menu-list" active-class="active">Destinations</nuxt-link>
             <!--        <nuxt-link to="/hotels" class="menu-list" active-class="active">hotel</nuxt-link>-->
             <!--      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>-->
             <!--      <nuxt-link to="/reviews" class="flex gap-2 items-center"><img src="/icons/search.svg"> Reviews</nuxt-link>-->
@@ -32,15 +34,22 @@
               <template #popper>
                 <!--            <button v-close-popper>Close</button>-->
                 <div class="flex">
-                  <nuxt-link v-close-popper to="/why-book-with-us" class="menu-list " active-class="active">Why book with us</nuxt-link>
-                  <nuxt-link v-close-popper to="/travel-with-confidence" class="menu-list" active-class="active">Travel with confidence</nuxt-link>
-                  <nuxt-link v-close-popper to="/booking-terms-and-conditions" class="menu-list" active-class="active">booking terms and conditions</nuxt-link>
-                  <nuxt-link v-close-popper to="/about-us" class="menu-list" active-class="active">About us</nuxt-link>
-                  <nuxt-link v-close-popper to="/frequently-asked-questions" class="menu-list" active-class="active">frequently Asked Questions</nuxt-link>
+                  <nuxt-link v-close-popper to="#" class="menu-list " active-class="active">Why book with us</nuxt-link>
+                  <nuxt-link v-close-popper to="#" class="menu-list" active-class="active">Travel with confidence</nuxt-link>
+                  <nuxt-link v-close-popper to="#" class="menu-list" active-class="active">booking terms and conditions</nuxt-link>
+                  <nuxt-link v-close-popper to="#" class="menu-list" active-class="active">About us</nuxt-link>
+                  <nuxt-link v-close-popper to="#" class="menu-list" active-class="active">frequently Asked Questions</nuxt-link>
+<!--                  <nuxt-link v-close-popper to="/why-book-with-us" class="menu-list " active-class="active">Why book with us</nuxt-link>-->
+<!--                  <nuxt-link v-close-popper to="/travel-with-confidence" class="menu-list" active-class="active">Travel with confidence</nuxt-link>-->
+<!--                  <nuxt-link v-close-popper to="/booking-terms-and-conditions" class="menu-list" active-class="active">booking terms and conditions</nuxt-link>-->
+<!--                  <nuxt-link v-close-popper to="/about-us" class="menu-list" active-class="active">About us</nuxt-link>-->
+<!--                  <nuxt-link v-close-popper to="/frequently-asked-questions" class="menu-list" active-class="active">frequently Asked Questions</nuxt-link>-->
                 </div>
               </template>
             </VDropdown>
-            <nuxt-link to="/reviews" class="menu-list" active-class="active">Reviews</nuxt-link>
+            <nuxt-link to="#" class="menu-list" active-class="active">Reviews</nuxt-link>
+<!--          <nuxt-link to="/reviews" class="menu-list" active-class="active">Reviews</nuxt-link>-->
+
 
 
 <!--          <span class="font-semibold">+1 (202) 4911478</span>-->
@@ -82,7 +91,7 @@
 
 <!--    </div>-->
 
-    <div class="w-full z-30 sm:hidden">
+    <div class="w-full z-30 hidden">
 
 
       <div class="bg-gray-50 w-full items-center mx-auto grid grid-cols-4 gap-3 text-center">
