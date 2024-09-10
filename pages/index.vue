@@ -117,7 +117,7 @@
           </div>
           <div class="">
             <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full h-[400px] object-cover"></nuxt-img>
-            <nuxt-img src="/images/hotels/5start.jpg" class="w-full object-cover"></nuxt-img>
+            <nuxt-img src="/images/hotels/4.jpg" class="w-full object-cover"></nuxt-img>
           </div>
         </div>
       </div>
