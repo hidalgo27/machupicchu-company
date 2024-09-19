@@ -2,7 +2,7 @@
   <div>
     <Headers></Headers>
     <slot></slot>
-    <section class="py-2 bg-gray-100 mt-12 relative z-10">
+    <section class="py-2  mt-12 relative z-10">
 
       <FormFooterInquireDetail></FormFooterInquireDetail>
     </section>

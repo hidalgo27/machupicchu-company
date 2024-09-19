@@ -10,6 +10,7 @@
     </div>
   </header>
 
+
   <section class="my-12 container">
 
       <div class="grid md:grid-cols-2 grid-cols-1 items-center  gap-24">

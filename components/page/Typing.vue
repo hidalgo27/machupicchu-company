@@ -7,7 +7,7 @@
 <script setup lang="ts">
 
 const texts = [
-  { text: 'Let’s go to Ecuador.', color: 'text-secondary' },
+  { text: 'Let’s go to Ecuador.', color: 'text-primary' },
   { text: 'Go with the Experts.', color: 'text-gray-200' },
   // { text: 'Vamos a Ecuador.', color: 'text-secondary' },
   // { text: 'Go with the Experts.', color: 'text-gray-500' },

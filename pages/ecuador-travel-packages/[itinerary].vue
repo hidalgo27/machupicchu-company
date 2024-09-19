@@ -314,7 +314,7 @@ onMounted(async () => {
 
       <section class="">
         <div class="container grid md:grid-cols-12 gap-12">
-          <div class="md:col-span-9">
+          <div class="md:col-span-12">
 
               <div class="flex gap-6 my-5 overflow-x-scroll focus:touch-pan-x">
                 <a href="#overview"  class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Overview</a>
@@ -380,7 +380,7 @@ onMounted(async () => {
 
                     <div class="relative w-20 text-center gap-12">
                       <div class="absolute -z-10 left-1/2 top-0 bottom-0 border-l-2 border-dashed border-slate-300"></div>
-                      <div class="bg-white py-2  font-bold text-xs" :class="[currentItem == index ? 'text-secondary' : 'text-slate-500']">DAY <span class="rounded-full px-2 py-1  text-white" :class="{'bg-red-700': packages.duracion == index + 1, 'bg-primary': index + 1 ==  1, 'bg-gray-500': index + 1 > 1}">{{index + 1}}</span></div>
+                      <div class=" py-2  font-bold text-xs" :class="[currentItem == index ? 'text-secondary' : 'text-slate-500']">DAY <span class="rounded-full px-2 py-1  text-white" :class="{'bg-red-700': packages.duracion == index + 1, 'bg-primary': index + 1 ==  1, 'bg-gray-500': index + 1 > 1}">{{index + 1}}</span></div>
                     </div>
                     <div class="space-y-2 w-full " :class="[index + 1 == items.length ? 'border-y' : 'border-t']">
                       <div>
@@ -414,7 +414,7 @@ onMounted(async () => {
 
 
           </div>
-          <div class="md:col-span-3 -mt-32 z-10">
+          <div class="md:col-span-3 -mt-32 z-10 hidden">
 
 
             <div class="flex gap-3 ">
@@ -599,7 +599,7 @@ onMounted(async () => {
         </div>
       </section>
 
-      <section class="container ">
+      <section class="container hidden">
         <div class="flex mb-3 items-center text-2xl text-gray-700 font-bold gap-2 dark:text-gray-400">
           <div class="">
             <span class="inline-block w-5 h-2.5 bg-secondary"></span>

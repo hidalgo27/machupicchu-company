@@ -228,19 +228,20 @@ onMounted(async () => {
 
             <section class="pb-8 text-center">
 <!--              <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" alt="" class="mx-auto w-64">-->
-              <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
-              <h3 class="my-3 font-semibold text-gray-700 text-2xl">Free Quote</h3>
+              <div class="border-title mb-6 mx-auto"></div>
+              <nuxt-img src="/images/logos/logo-mapi.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
+              <h3 class="my-3 font-semibold text-gray-700 text-2xl mt-12">Free Quote</h3>
               <p class="text-gray-500">Select your travel preferences and we will send you a travel proposal.</p>
             </section>
             <div class="divider-dashed"></div>
 
             <div class="text-left mt-6">
-              <h2 class="text-lg text-tertiary mb-5">Get a quote on this travel package:</h2>
+              <h2 class="text-lg text-secondary mb-5">Get a quote on this travel package:</h2>
 
-              <h2 class="text-xl text-tertiary mb-5 bg-white text-center px-5 py-2 border border-gray-300 text-primary font-semibold rounded-sm">
+              <h2 class="text-xl text-primary mb-5 bg-white text-center px-5 py-2 border border-gray-300 text-primary font-semibold rounded-sm">
                 {{ formStore.titlePackages }}</h2>
 
-              <h3 class="text-lg text-tertiary my-5">Hotel Category</h3>
+              <h3 class="text-lg text-primary my-5">Hotel Category</h3>
               <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
                 <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -296,7 +297,7 @@ onMounted(async () => {
 
               </div>
               </div>
-              <h3 class="text-lg text-tertiary my-5">Number of travelers</h3>
+              <h3 class="text-lg text-primary my-5">Number of travelers</h3>
               <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
                 <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -319,7 +320,7 @@ onMounted(async () => {
               </div>
 
 
-<!--              <h3 class="text-lg text-tertiary my-5">Contact information</h3>-->
+<!--              <h3 class="text-lg text-primary my-5">Contact information</h3>-->
 
               <form @submit.prevent="handleSubmit">
                 <div class="grid grid-cols-1 mt-6 gap-3">

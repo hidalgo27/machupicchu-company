@@ -1,7 +1,7 @@
 <template>
   <div>
 
-  <div class="container">
+  <div class="container hidden">
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
       <div class="group border  block hover:shadow  overflow-hidden text-center transition duration-500" v-for="(packages, index) in listPackages" :key="index">
         <div class="overflow-hidden relative">
@@ -127,6 +127,43 @@
   </div>
   </div>
 
+
+
+  <section class="container">
+
+
+    <div class="grid grid-cols-3 gap-6">
+      <nuxt-link :to="'/ecuador-travel-packages/'+packages.url" class="bg-white  group cursor-pointer hover:shadow-lg transition duration-500 ease-in-out" v-for="(packages, index) in listPackages" :key="index">
+        <div class="overflow-hidden">
+          <nuxt-img :src="packages.imagen" :alt="packages.titulo" class="w-full object-cover h-[400px] transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
+        </div>
+        <div class="p-6 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+          <div class="border-title mb-2 "></div>
+          <h2 class="text-xl">{{ packages.titulo }}</h2>
+          <p class="my-3 text-sm font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem eaque incidunt labore obcaecati odio vel.</p>
+<!--          <p class="text-secondary">From $1234 usd</p>-->
+          <div v-if="packages.is_p_t == 0">
+            <div v-if="packages.precio_tours > 0">
+              ${{ packages.precio_tours }}<span class="text-sm text-secondary">usd</span>
+            </div>
+            <div v-else>
+              <span class="text-red-500">Inquire</span>
+            </div>
+          </div>
+          <div v-else>
+            <div class="flex items-center text-secondary" v-if="getThreeStarPrice(packages.precio_paquetes) > 0">
+              <span class="">From</span> ${{ getThreeStarPrice(packages.precio_paquetes) }} usd
+            </div>
+            <div v-else>
+              <span class="text-red-500">Inquire</span>
+            </div>
+          </div>
+        </div>
+      </nuxt-link>
+
+
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">

@@ -3,7 +3,7 @@
     <div class="container pt-12">
       <div class="mb-10 flex items-center justify-center">
         <div>
-          <nuxt-img src="/images/logos/logo-gotoecuador-white.svg" class="h-[14px] md:h-[25px] mx-auto"></nuxt-img>
+          <nuxt-img src="/images/logos/logo-mapi.svg" class="h-[14px] md:h-[25px] invert mx-auto"></nuxt-img>
         </div>
         <div>
           <span class="text-white px-4 text-xs md:text-lg">part of</span>
@@ -21,7 +21,7 @@
           </p>
           <ul class="mt-2 space-y-2">
             <li>
-              <nuxt-link to="/ecuador-travel-packages" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Ecuador Travel Packages</nuxt-link>
+              <nuxt-link to="/ecuador-travel-packages" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Peru Travel Packages</nuxt-link>
             </li>
 <!--            <li>-->
 <!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Days Tours</a>-->
@@ -35,17 +35,17 @@
           </p>
           <ul class="mt-2 space-y-2">
             <li>
-              <nuxt-link to="/destinations/otavalo" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Otavalo</nuxt-link>
+              <nuxt-link to="/destinations/cusco" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Cusco</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/destinations/quito" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Quito</nuxt-link>
+              <nuxt-link to="/destinations/machupicchu" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Machu Picchu</nuxt-link>
             </li>
             <li>
-              <nuxt-link to="/destinations/guayaquil" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Guayaquil</nuxt-link>
+              <nuxt-link to="/destinations/sacred-valley" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Sacred Valley</nuxt-link>
             </li>
-            <li>
-              <nuxt-link to="/destinations/galapagos" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Galapagos</nuxt-link>
-            </li>
+<!--            <li>-->
+<!--              <nuxt-link to="/destinations/galapagos" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Galapagos</nuxt-link>-->
+<!--            </li>-->
             <li>
               <nuxt-link to="/destinations" class="transition-colors duration-300 italic underline text-sm text-deep-purple-50 hover:text-teal-accent-400">View Other</nuxt-link>
             </li>
@@ -118,7 +118,7 @@
 
       <div class="flex flex-col justify-between pt-5 border-t border-gray-500 sm:flex-row">
         <p class="text-sm dark:text-gray-300">
-          © Copyright 2022 GotoEcuador. All rights reserved. | Avenida La Coruña E12-148 Y Valladolid , Quito 170525, Ecuador
+          © Copyright 2022 Machu Picchu Company. All rights reserved. | GOTOPERU COMPANY EIRL - RUC 20609225441 - Avenida El Sol 449 - Cusco - Cusco - Peru
         </p>
         <div class="flex items-center mt-4 space-x-4 sm:mt-0">
         </div>

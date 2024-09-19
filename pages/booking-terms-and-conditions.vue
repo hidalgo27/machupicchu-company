@@ -1,5 +1,5 @@
 <template>
-  <section class="container mt-12">
+  <section class="container mt-64">
     <h2 class="text-center font-bold text-gray-500 md:text-2xl mb-12 xl:text-4xl dark:text-secondary">BOOKING TERMS AND CONDITIONS</h2>
     <div class="grid grid-cols-1">
       <article class="mb-4">

@@ -6,8 +6,10 @@
 
         <section class="pb-8 text-center">
 <!--          <img src="https://gotoperu-com.s3-us-west-1.amazonaws.com/logos/logo-gotoperu-black.png" alt="" class="mx-auto w-64">-->
-          <nuxt-img src="/images/logos/logo-gotoecuador3.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
-          <h3 class="my-3 font-semibold text-gray-700 text-2xl">Free Quote</h3>
+          <div class="border-title mb-6 mx-auto"></div>
+          <nuxt-img src="/images/logos/logo-mapi.svg" class="w-[250px] md:w-[320px] mx-auto"></nuxt-img>
+
+          <h3 class="my-3 font-semibold text-secondary text-2xl mt-12">Free Quote</h3>
           <p class="text-gray-500">We're flexible! Postpone your tour with zero cost up to 10 days prior to departure.</p>
 
         </section>
@@ -15,8 +17,8 @@
         <div class="text-left ">
 
 
-          <h3 class="text-lg text-tertiary font-semibold mt-5 text-center">HOTEL CATEGORY</h3>
-          <h3 class="text-xs text-tertiary text-center">(OPTIONAL. You may choose more than one)</h3>
+          <h3 class="text-lg text-primary font-semibold mt-5 text-center">HOTEL CATEGORY</h3>
+          <h3 class="text-xs text-primary text-center">(OPTIONAL. You may choose more than one)</h3>
           <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
 
             <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
@@ -74,8 +76,8 @@
             </div>
           </div>
 
-          <h3 class="text-xs text-tertiary hidden  mt-3">You can choose one or more destinations</h3>
-          <h3 class="text-lg text-tertiary font-semibold text-center pt-2">NUMBER OF TRAVELERS</h3>
+          <h3 class="text-xs text-primary hidden  mt-3">You can choose one or more destinations</h3>
+          <h3 class="text-lg text-primary font-semibold text-center pt-2">NUMBER OF TRAVELERS</h3>
           <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
 
             <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
@@ -99,7 +101,7 @@
           </div>
 
 
-          <h3 class="text-lg text-tertiary font-semibold text-center pt-2">TRIP LENGTH</h3>
+          <h3 class="text-lg text-primary font-semibold text-center pt-2">TRIP LENGTH</h3>
           <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
 
             <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
@@ -171,7 +173,7 @@
 
 
 
-<!--          <h3 class="text-lg text-tertiary  my-5">Contact information</h3>-->
+<!--          <h3 class="text-lg text-primary  my-5">Contact information</h3>-->
 
           <form @submit.prevent="handleSubmit">
             <div class="grid grid-cols-1 pt-2 gap-3">

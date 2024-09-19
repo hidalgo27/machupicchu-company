@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Ecuador Travel Packages',
+      title: 'Peru Travel Packages',
       // meta: [
       //   { name: 'description', content: 'My amazing site.' }
       // ],
@@ -30,8 +30,11 @@ export default defineNuxtConfig({
   },
 
   modules: [// needed
-  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt'],
-
+  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt','@hypernym/nuxt-gsap'],
+  // gsap: {
+  //   composables: true,
+  //   provide: false,
+  // },
   googleFonts: {
     families: {
       Lato: [100, 300, 400, 700, 900],  // Puedes especificar los pesos de las fuentes que necesites
@@ -57,7 +60,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
     public: {
-      apiBase: '' || "https://api.gotoecuador.com/api",
+      apiBase: '' || "https://api.machupicchu.company/api",
       // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
       apiBaseTest: '',
       gtmContainerId: process.env.NUXT_PUBLIC_GTM_CONTAINER_ID || '',

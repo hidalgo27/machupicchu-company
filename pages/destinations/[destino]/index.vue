@@ -29,7 +29,7 @@
   <section class="my-12">
     <div class="container my-6">
       <div class="grid text-center text-lg">
-        <p>ECUADOR packages are created by our team of travel specialists so that you can enjoy the most of your time in every destination in Ecuador.</p>
+        <p>Peru packages are created by our team of travel specialists so that you can enjoy the most of your time in every destination in Ecuador.</p>
         <p>Every detail of your travel itinerary is planned and executed to perfection by our partners in each Ecuador destination. If you are looking for an activity or destination not listed in our travel packages, do not hesitate to contact us for more information.</p>
       </div>
     </div>

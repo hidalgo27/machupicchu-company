@@ -1,16 +1,16 @@
 <template>
-  <div>
+  <div class="h-screen ">
     <Headers class=" top-0 absolute w-full  z-50"></Headers>
 
     <slot/>
 
-<!--    <section class="py-2 bg-gray-100 mt-12 relative z-10">-->
+    <section class="py-2  mt-12 relative z-10">
 
-<!--      <form-footer-inquire></form-footer-inquire>-->
-<!--    </section>-->
-<!--    <Footer></Footer>-->
+      <form-footer-inquire></form-footer-inquire>
+    </section>
+    <Footer></Footer>
 
-<!--    <Float></Float>-->
+    <Float></Float>
 
   </div>
 </template>

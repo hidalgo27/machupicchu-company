@@ -30,9 +30,9 @@ export default {
       yellow: colors.yellow,
       fuchsia: colors.fuchsia,
       cyan: colors.cyan,
-      primary: '#7c9aa3',
-      secondary: '#F9A825',
-      tertiary: '#343a40',
+      primary: '#343a40',
+      secondary: '#C1AA7F',
+      tertiary: '#7c9aa3',
       transparent: 'transparent',
     },
     container: {
