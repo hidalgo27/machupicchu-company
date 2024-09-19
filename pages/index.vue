@@ -160,26 +160,26 @@ onMounted(async () => {
       <div class="col-span-8">
         <div class="grid grid-cols-2 gap-6 items-center">
 
-            <div class="relative group">
+            <nuxt-link to="/destinations/peru/accommodation" class="relative group">
               <div class="overflow-hidden">
-              <nuxt-img src="/images/hotels/1.jpg" class="object-cover h-[450px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
+              <nuxt-img src="/images/hotels/1.jpg" class="object-cover h-[550px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
               </div>
-              <div class="absolute bottom-0 left-0  z-10 group-hover:bg-secondary backdrop-blur-sm bg-secondary/70 text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+              <div class="absolute bottom-0 left-0  z-10 group-hover:bg-secondary backdrop-blur-sm  text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
                 <div class="border-title-sm mb-2"></div>
                 <h3 class="">Hotel B, <span class="italic text-sm">Lima</span></h3>
-                <p class="text-xs font-light">Combining intimate, modern hospitality with stylish, historical elegance, Hotel B offers both a polished and d... </p>
+                <p class="text-sm font-light">Combining intimate, modern hospitality with stylish, historical elegance, Hotel B offers both a polished and d... </p>
               </div>
-            </div>
-            <div class="relative group">
+            </nuxt-link>
+          <nuxt-link to="/destinations/peru/accommodation" class="relative group">
               <div class="overflow-hidden">
-                <nuxt-img src="/images/hotels/2.jpg" class="object-cover h-[450px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
+                <nuxt-img src="/images/hotels/2.jpg" class="object-cover h-[550px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
               </div>
-              <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+              <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-sm text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
                 <div class="border-title-sm mb-2"></div>
                 <h3 class="">Puqui, <span class="italic text-sm">Colca Canyon</span></h3>
-                <p class="text-xs font-light">Nestled deep within the Colca Valley, PUQIO is set in a landscape where volcanoes, expansive grasslands, and u... </p>
+                <p class="text-sm font-light">Nestled deep within the Colca Valley, PUQIO is set in a landscape where volcanoes, expansive grasslands, and u... </p>
               </div>
-            </div>
+          </nuxt-link>
 
 
 
@@ -189,31 +189,31 @@ onMounted(async () => {
 
       <div class="col-span-12">
         <div class="grid grid-cols-3 gap-6 items-center">
-          <div class="relative group overflow-hidden h-[450px] 2xl:h-[500px]">
-            <nuxt-img src="/images/hotels/3.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover object-center parallax-image"></nuxt-img>
-            <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+            <nuxt-img src="/images/hotels/3.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover object-center"></nuxt-img>
+            <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-lg text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
               <div class="border-title-sm mb-2"></div>
               <h3 class="">Hotel B, <span class="italic text-sm">Colca Canyon</span></h3>
-              <p class="text-xs font-light">Nestled deep within the Colca Valley, PUQIO is set in a landscape where volcanoes, expansive grasslands, and u...  </p>
+              <p class="text-sm font-light">Nestled deep within the Colca Valley, PUQIO is set in a landscape where volcanoes, expansive grasslands, and u...  </p>
             </div>
-          </div>
+          </nuxt-link>
 
-          <div class="relative group overflow-hidden h-[450px] 2xl:h-[500px]">
-            <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full  h-[450px] 2xl:h-[550px] object-cover parallax-image"></nuxt-img>
-            <div class="absolute w-full bottom-0 left-0  z-10 group-hover:bg-secondary backdrop-blur-sm bg-secondary/70 text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+            <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full  h-[450px] 2xl:h-[550px] object-cover"></nuxt-img>
+            <div class="absolute w-full bottom-0 left-0  z-10 group-hover:bg-secondary backdrop-blur-lg  text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
               <div class="border-title-sm mb-2"></div>
               <h3 class="truncate">Inkaterra Machu Pichu Pueblo Hotel , <span class="italic text-sm">Machu Picchu</span></h3>
-              <p class="text-xs font-light">The hotel consists of several whitewashed cottages in an Andean village located in the heart of Aguas Calientes, p... </p>
+              <p class="text-sm font-light">The hotel consists of several whitewashed cottages in an Andean village located in the heart of Aguas Calientes, p... </p>
             </div>
-          </div>
-          <div class="relative group overflow-hidden h-[450px] 2xl:h-[500px]">
-            <nuxt-img src="/images/hotels/4.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover parallax-image"></nuxt-img>
-            <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+          </nuxt-link>
+          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+            <nuxt-img src="/images/hotels/4.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover"></nuxt-img>
+            <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-lg text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
               <div class="border-title-sm mb-2"></div>
               <h3 class="">Sol y Luna Lodge & Spa , <span class="italic text-sm">Sacred Valley</span></h3>
-              <p class="text-xs font-light">Set among beautiful gardens in the magnificent location of the Sacred Valley, Sol y Luna is a charming and comf... </p>
+              <p class="text-sm font-light">Set among beautiful gardens in the magnificent location of the Sacred Valley, Sol y Luna is a charming and comf... </p>
             </div>
-          </div>
+          </nuxt-link>
 
 
         </div>
