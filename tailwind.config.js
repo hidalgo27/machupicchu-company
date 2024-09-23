@@ -17,6 +17,16 @@ export default {
       fontFamily: {
         'sans': ['"Lato"', ...defaultTheme.fontFamily.sans],
       },
+      keyframes: {
+        'slide-left-right': {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(-20px)' }, // Se va a la izquierda
+          '100%': { transform: 'translateX(20px)' } // Vuelve a la derecha y se superpone
+        },
+      },
+      animation: {
+        'slide-left-right': 'slide-left-right 0.5s ease-in-out forwards', // Duración y animación
+      },
     },
     colors: {
       "vtd-primary": colors.sky, // Light mode Datepicker color

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <Headers></Headers>
+  <div class="h-screen">
+    <Headers class="top-0 absolute w-full  z-50"></Headers>
     <slot></slot>
     <section class="py-2  mt-12 relative z-10">
 

@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const { $gsap } = useNuxtApp()
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide} from "vue3-carousel"
 import {usePackageStore} from "~/stores/packages";
@@ -236,6 +237,9 @@ const getTeam = async () => {
   // }
 }
 const limitedTeam = computed(() => listTeam.value.slice(0, 7));
+
+
+
 onMounted(async () => {
   await getTeam()
   // loadScript()
@@ -249,6 +253,71 @@ onMounted(async () => {
   // await nextTick();
   codeWetravel.value = packageStore.code_w
   viewButton.value = true
+
+  const firstImages = document.querySelectorAll('.first-image');
+  const secondImages = document.querySelectorAll('.second-image');
+
+  // Animación para las imágenes con la clase .first-image (de izquierda a derecha)
+  firstImages.forEach((firstImage) => {
+    firstImage.addEventListener('mouseenter', () => {
+      $gsap.set(firstImage, { zIndex: 30 });
+      $gsap.to(firstImage, {
+        x: -20, // Mover 20px hacia la izquierda
+        duration: 0.3,
+        ease: "power1.inOut",
+        onComplete: () => {
+          $gsap.to(firstImage, {
+            x: 20, // Volver hacia la derecha y superponerse
+            duration: 0.3,
+            ease: "power1.inOut",
+          });
+        }
+      });
+    });
+
+    firstImage.addEventListener('mouseleave', () => {
+      $gsap.to(firstImage, {
+        x: 0, // Regresar a la posición original
+        duration: 0.3,
+        ease: "power1.inOut",
+        onComplete: () => {
+          $gsap.set(firstImage, { zIndex: 20 }); // Restablecer z-index después de la animación
+        }
+      });
+    });
+  });
+
+  // Animación para las imágenes con la clase .second-image (de derecha a izquierda)
+  secondImages.forEach((secondImage) => {
+    secondImage.addEventListener('mouseenter', () => {
+      $gsap.set(secondImage, { zIndex: 30 });
+      $gsap.to(secondImage, {
+        x: 20, // Mover 20px hacia la derecha
+        duration: 0.3,
+        ease: "power1.inOut",
+        onComplete: () => {
+          $gsap.to(secondImage, {
+            x: -20, // Volver hacia la izquierda y superponerse
+            duration: 0.3,
+            ease: "power1.inOut",
+          });
+        }
+      });
+    });
+
+    secondImage.addEventListener('mouseleave', () => {
+      $gsap.to(secondImage, {
+        x: 0, // Regresar a la posición original
+        duration: 0.3,
+        ease: "power1.inOut",
+        onComplete: () => {
+          $gsap.set(secondImage, { zIndex: 20 }); // Restablecer z-index después de la animación
+        }
+      });
+    });
+  });
+
+
 
 })
 
@@ -297,33 +366,109 @@ onMounted(async () => {
 <!--        </div>-->
 <!--      </div>-->
 
-      <div class="h-[75vh] 2xl:h-[60vh] bg-gray-500">
-        <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">
-          <template v-for="paquete_destino in packages.paquetes_destinos">
+<!--      <div class="h-[75vh] 2xl:h-[60vh] bg-gray-500">-->
+<!--        <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">-->
+<!--          <template v-for="paquete_destino in packages.paquetes_destinos">-->
 
-              <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">
-                <nuxt-img :src="destino_imagen.nombre" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[60vh] object-bottom"></nuxt-img>
-              </slide>
+<!--              <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">-->
+<!--                <nuxt-img :src="destino_imagen.nombre" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[60vh] object-bottom"></nuxt-img>-->
+<!--              </slide>-->
 
-          </template>
-        </carousel>
+<!--          </template>-->
+<!--        </carousel>-->
 
-      </div>
+<!--      </div>-->
+
+      <header class="h-[100vh] 2xl:h-[100vh] relative bg-secondary overflow-hidden grid grid-cols-2">
+        <div class="col-span-1">
+<!--          <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[125vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>-->
+          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709050239382Slider%20copia%203%20machupicchu_1709050241.jpg" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[100vh] object-bottom"></nuxt-img>
+<!--          <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">-->
+<!--            <template v-for="paquete_destino in packages.paquetes_destinos">-->
+<!--              <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">-->
+<!--                <nuxt-img :src="destino_imagen.nombre" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[60vh] object-bottom"></nuxt-img>-->
+<!--              </slide>-->
+<!--            </template>-->
+<!--          </carousel>-->
+        </div>
+        <div class="col-span-1 grid items-center text-white bg-primary p-24 h-full 2xl:mb-40">
+          <div class="pt-24">
+            <h1 class="text-secondary mb-2">6 day | from $1234</h1>
+            <div class="border-title-sm mb-2"></div>
+            <h2 class="2xl:text-3xl text-xl font-semibold mb-6">{{ packages.titulo }}</h2>
+
+<!--            <h4>travel advisor of the month</h4>-->
+<!--            <div class="py-6 flex gap-6">-->
+<!--              <nuxt-img src="https://gotoperu-com.s3.us-west-1.amazonaws.com/team/maja.jpg" class=" h-20"></nuxt-img>-->
+<!--              <nuxt-img src="https://gotoperu-com.s3.us-west-1.amazonaws.com/team/karina.jpg" class=" h-20"></nuxt-img>-->
+<!--            </div>-->
+<!--              <div class="flex -space-x-1 overflow-hidden">-->
+<!--                <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white m-1" :src="team.imagen_perfil" :alt="team.nombre" v-for="(team, index) in limitedTeam" :key="index">-->
+<!--              </div>-->
+
+<!--            <p class=" tracking-widest font-light 2xl:w-1/2 mt-3">Get a travel expert to plan your dream vacation</p>-->
+
+            <div class="flex gap-6 my-6 overflow-x-scroll text-secondary focus:touch-pan-x items-center">
+              <a href="#overview"  class="text-sm py-2 bg-slate-100 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Overview</a>
+              <a href="#itinerary" class="text-sm py-2 bg-slate-100 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary" >Itinerary</a>
+              <a href="#included" class="text-sm py-2 bg-slate-100 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Included</a>
+              <!--      <a href="#hotels" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Hotels</a>-->
+              <!--      <a href="included" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Hotels</a>-->
+              <!--                <a href="#prices" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Prices</a>-->
+              <button class="btn-secondary ">Plan your adventure</button>
+            </div>
 
 
+          </div>
+        </div>
+        <!--    <div class="absolute  inset-0 w-full h-full">-->
+        <!--      <div class="container grid grid-cols-2  pb-12 h-full">-->
+        <!--        <div class="">-->
+        <!--          <div class="border-2 border-white w-8 mb-2"></div>-->
+        <!--          <h1 class="text-white text-opacity-70 leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold">-->
+        <!--            Peru-->
+        <!--            Destinations</h1>-->
+
+        <!--          <p class="text-white text-xl   tracking-widest font-light mt-5">Unveil the Wonders of a Journey Through History and Nature.</p>-->
+        <!--        </div>-->
+        <!--        <div class="">-->
+        <!--          sd-->
+        <!--        </div>-->
+        <!--      </div>-->
+        <!--    </div>-->
+      </header>
+
+
+
+      <section class="my-12">
+        <div class="container grid grid-cols-3 text-center">
+          <div class="">
+            <nuxt-img src="/icons/location-2.svg" class="h-16 mx-auto mb-2"></nuxt-img>
+            <p>Personalised journeys from start to finish</p>
+          </div>
+          <div class="">
+            <nuxt-img src="/icons/care-4.svg" class="h-16 mx-auto mb-2"></nuxt-img>
+            <p>Every trip helps support Conservation</p>
+          </div>
+          <div class="">
+            <nuxt-img src="/icons/clock.svg" class="h-16 mx-auto mb-2"></nuxt-img>
+            <p>Every detail taken care of</p>
+          </div>
+        </div>
+      </section>
 
       <section class="">
         <div class="container grid md:grid-cols-12 gap-12">
-          <div class="md:col-span-12">
+          <div class="md:col-span-8">
 
-              <div class="flex gap-6 my-5 overflow-x-scroll focus:touch-pan-x">
-                <a href="#overview"  class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Overview</a>
-                <a href="#itinerary" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary" >Itinerary</a>
-                <a href="#included" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Included</a>
-                <!--      <a href="#hotels" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Hotels</a>-->
-                <!--      <a href="included" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Hotels</a>-->
-<!--                <a href="#prices" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Prices</a>-->
-              </div>
+<!--              <div class="flex gap-6 my-5 overflow-x-scroll focus:touch-pan-x">-->
+<!--                <a href="#overview"  class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Overview</a>-->
+<!--                <a href="#itinerary" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary" >Itinerary</a>-->
+<!--                <a href="#included" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Included</a>-->
+<!--                &lt;!&ndash;      <a href="#hotels" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Hotels</a>&ndash;&gt;-->
+<!--                &lt;!&ndash;      <a href="included" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Hotels</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                <a href="#prices" class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Prices</a>&ndash;&gt;-->
+<!--              </div>-->
 
 
             <div class="grid grid-cols-3 text-xs md:grid-cols-5  gap-6">
@@ -414,19 +559,38 @@ onMounted(async () => {
 
 
           </div>
-          <div class="md:col-span-3 -mt-32 z-10 hidden">
+          <div class="md:col-span-3 z-10">
 
 
-            <div class="flex gap-3 ">
+            <div class="flex  gap-3 ">
 
-              <div class="flex-1 border bg-white p-3 flex items-center" v-if="packages.is_p_t == 1">
+              <div class="flex-1  flex items-center" v-if="packages.is_p_t == 1">
 
                 <div class="text-4xl font-semibold text-gray-600">
-                  <span class="text-base block">{{ packages.duracion }} days</span>
+                  <span class="text-base text-secondary block mb-2">{{ packages.duracion }} days</span>
+                  <div class="border-title-sm mb-2 "></div>
                   <h2 class="text-2xl mb-3 font-bold text-gray-600"> {{ packages.titulo }}</h2>
-                  <div class="flex -space-x-1 overflow-hidden">
-                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" :src="team.imagen_perfil" :alt="team.nombre" v-for="(team, index) in limitedTeam" :key="index">
+                  <div class="columns-2 gap-2">
+                    <div class="rounded overflow-hidden relative first-image group">
+                      <nuxt-img src="https://gotoperu-com.s3.us-west-1.amazonaws.com/team/maja.jpg" class="h-72 object-cover object-center group-hover:shadow w-full"></nuxt-img>
+                      <div class="absolute backdrop-blur-lg bottom-0 w-full p-2 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500">
+                        <h4 class="text-xs">Fiorela - Luxury Travel Advisor to Peru</h4>
+                        <p class="text-xs font-light">Fiorela designs personalized luxury trips to Peru, ensuring unique and exclusive experiences for an unforgettable adventure.</p>
+                        <a href="" class="text-xs flex gap-2 items-center mt-2">Contact: <nuxt-link to=""><nuxt-img src="/icons/whatsapp.svg" class="h-4"></nuxt-img></nuxt-link></a>
+                      </div>
+                    </div>
+                    <div class="rounded overflow-hidden relative second-image group pt-6">
+                      <nuxt-img src="https://gotoperu-com.s3.us-west-1.amazonaws.com/team/karina.jpg" class="h-72 object-cover group-hover:shadow rounded object-center w-full"></nuxt-img>
+                      <div class="absolute backdrop-blur-lg bottom-0 w-full p-2 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500">
+                        <h4 class="text-xs">Fiorela - Luxury Travel Advisor to Peru</h4>
+                        <p class="text-xs font-light">Fiorela designs personalized luxury trips to Peru, ensuring unique and exclusive experiences for an unforgettable adventure.</p>
+                        <a href="" class="text-xs flex gap-2 items-center mt-2">Contact: <nuxt-link to=""><nuxt-img src="/icons/whatsapp.svg" class="h-4"></nuxt-img></nuxt-link></a>
+                      </div>
+                    </div>
                   </div>
+<!--                  <div class="flex -space-x-1 overflow-hidden">-->
+<!--                    <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white" :src="team.imagen_perfil" :alt="team.nombre" v-for="(team, index) in limitedTeam" :key="index">-->
+<!--                  </div>-->
                   <p class="text-sm font-normal mt-2">Get a travel expert to plan your dream vacation</p>
 
                   <div v-if="getThreeStarPrice(packages.precio_paquetes) > 0">
@@ -465,80 +629,7 @@ onMounted(async () => {
 
 
 
-            <div class="border my-3 bg-gray-600 text-white p-3 text-xs">
-              <p class="text-white">Contact our travel advisor to use this itinerary (or others) as a base to design together your perfect Ecuatorian adventure!</p>
-              <p class="mt-2"><span class="text-secondary font-bold">For Example:</span> add one day / reduce the program lenght / upgrades hotels / add all meals / upgrade to private tours</p>
-            </div>
-
-            <div class="border">
-              <div class="bg-blue-100 font-medium p-3">
-                Availability
-              </div>
-              <div class="px-3 text-xs divide-y grid grid-cols-1 divide-slate-200">
-                <div class="grid grid-cols-2 py-2 items-center">
-                  <div class="">
-                    Departures Available
-                  </div>
-                  <div class="text-right font-medium">
-                    Until December 2024
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-2 py-2 items-center">
-
-                  <div class="border p-1 text-center">
-                    Group Tours
-                  </div>
-
-                  <div class="text-right font-medium">
-                    Available
-                  </div>
-
-                </div>
-
-
-                <div class="grid grid-cols-2 py-2 items-center">
-
-                  <div class="border border-fuchsia-500 text-fuchsia-500 p-1 text-center flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                    </svg>
-                    Private Tours
-                  </div>
-
-                  <div class="text-right font-medium">
-                    Available
-                  </div>
-                </div>
-
-                <div class="grid grid-cols-2 py-2 items-center">
-
-                  <div class="border border-cyan-500 text-cyan-500 p-1 text-center flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                    </svg> Solo Travelers
-                  </div>
-
-<!--                  <div class="text-right font-medium">-->
-<!--                    @foreach($paquete['precio_paquetes'] as $precio)-->
-<!--                    @if($precio['estrellas'] == 2)-->
-<!--                    @if($precio['precio_s'] > 0)-->
-<!--                    <div class="text-4xl font-semibold text-gray-600">-->
-<!--                      {{&#45;&#45;                                                                            <span> {{__('message.pack_par5')}} </span>&#45;&#45;}}-->
-<!--                      From${{$precio['precio_d']}}usd-->
-<!--                    </div>-->
-<!--                    @else-->
-<!--                    <span class="text-red-500 font-bold">{{__('message.button_inquire')}}</span>-->
-<!--                    @endif-->
-<!--                    @endif-->
-<!--                    @endforeach-->
-<!--                  </div>-->
-
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 my-3 gap-4">
+            <div class="grid grid-cols-2 my-12 gap-4">
               <div class="flex items-center gap-3">
                 <div class="rounded-full bg-secondary p-3">
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 stroke-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
