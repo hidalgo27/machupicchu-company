@@ -13,9 +13,6 @@ const getPackage = async () => {
   listPackages.value = res
 }
 
-onMounted(async () => {
-  await getPackage()
-})
 
 $gsap.registerPlugin(ScrollTrigger);
 onMounted(async () => {
@@ -67,87 +64,98 @@ onMounted(async () => {
           <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image h-[920px] 2xl:h-[1200px] object-cover object-center absolute top-0 left-0 w-full"></nuxt-img>
           <div class="absolute bottom-0 inset-0 items-center grid text-center text-3xl z-10 group-hover:backdrop-blur-sm group-hover:bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
             Machu Picchu
+            <div class="absolute text-sm bottom-0 w-full p-32 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium assumenda autem culpa delectus dolore, eveniet impedit in iste itaque laborum laudantium nam nesciunt optio pariatur quam repellat tempore voluptas.
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <div class="container grid grid-cols-4 gap-6 2xl:grid-cols-4 my-6">
-      <div class="relative group">
+      <nuxt-link :to="'/destinations/'+destination.url" class="relative group" v-for="destination in listPackages">
         <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1708990714220Slider%20copia%20arequipa_1708990715.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
+          <nuxt-img :src="destination.imagen" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
         </div>
 
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Arequipa
-        </div>
-      </div>
+        <div class="absolute bottom-0 inset-0 items-center overflow-hidden grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/package/MACHUPICCHU-AND-RAINBOW-MOUNTAIN_1710688497.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-        </div>
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Rainbow Mountain
-        </div>
-      </div>
+<!--          <p class="text-sm text-gray-500 dark:text-gray-200" v-html="destination.resumen"></p>-->
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964505112portada gotoperu titicaca lake_1708964505.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-        </div>
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Titicaca Lake
-        </div>
-      </div>
+            {{ destination.nombre }}
+            <div class="absolute text-sm bottom-0 w-full p-12 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500" v-html="destination.resumen">
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964376528portada gotoperu lima_1708964377.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
+            </div>
+
         </div>
 
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Lima
-        </div>
-      </div>
+      </nuxt-link>
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708963976885portada%20gotoperu%20cusco%202_1708963977.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-        </div>
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/package/MACHUPICCHU-AND-RAINBOW-MOUNTAIN_1710688497.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Rainbow Mountain-->
+<!--        </div>-->
+<!--      </div>-->
 
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Cusco
-        </div>
-      </div>
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964505112portada gotoperu titicaca lake_1708964505.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Titicaca Lake-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964235902portada%20gotoperu%20sacred_1708964236.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-        </div>
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Sacred Valley
-        </div>
-      </div>
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964376528portada gotoperu lima_1708964377.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/package/PERU-ADVENTURE_1710688514.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-        </div>
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Ica
-        </div>
-      </div>
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Lima-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="relative group">
-        <div class="overflow-hidden">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964593555portada%20gotoperu%20NAZCA_1708964594.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-        </div>
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708963976885portada%20gotoperu%20cusco%202_1708963977.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
 
-        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-          Nazca Lines
-        </div>
-      </div>
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Cusco-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964235902portada%20gotoperu%20sacred_1708964236.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Sacred Valley-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/package/PERU-ADVENTURE_1710688514.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Ica-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      <div class="relative group">-->
+<!--        <div class="overflow-hidden">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964593555portada%20gotoperu%20NAZCA_1708964594.jpg" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>-->
+<!--        </div>-->
+
+<!--        <div class="absolute bottom-0 inset-0 items-center grid text-center text-2xl z-10 group-hover:backdrop-blur-sm group-hover:bg-gray-950/30 text-white rounded px-6 py-3 transition duration-500 ease-in-out">-->
+<!--          Nazca Lines-->
+<!--        </div>-->
+<!--      </div>-->
 
     </div>
 
@@ -201,31 +209,6 @@ onMounted(async () => {
 
 
 
-  <section class="container grid grid-cols-1 md:grid-cols-3 gap-12 ">
-
-    <article class="grid grid-cols-1 place-content-between mb-6 border-r border-l dark:border-gray-700" v-for="destination in listPackages">
-      <div class="w-full">
-        <figure class="overflow-hidden relative">
-          <nuxt-img :src="destination.imagen" alt="" class="bg-cover h-full w-full"></nuxt-img>
-          <div class="absolute inset-0 gradient-cicle-gray"></div>
-        </figure>
-
-        <div class="w-full p-6 mt-4 mb-5 text-center">
-          <div class="">
-            <h2 class="text-xl font-bold mb-4 text-center text-gray-600 dark:text-gray-300">{{destination.nombre}}</h2>
-            <p class="text-sm text-gray-500 dark:text-gray-200" v-html="destination.resumen"></p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="w-full">
-        <nuxt-link :href="'/destinations/'+destination.url" class="btn-secondary block text-center mt-2">View All</nuxt-link>
-      </div>
-    </article>
-
-
-  </section>
 
 
     <section class="">

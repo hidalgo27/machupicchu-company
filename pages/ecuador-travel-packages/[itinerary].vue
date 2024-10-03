@@ -1,9 +1,13 @@
 <script lang="ts" setup>
+import Itinerary from "~/components/page/detail/Itinerary.vue";
+
 const { $gsap } = useNuxtApp()
 import 'vue3-carousel/dist/carousel.css'
 import {Carousel, Slide} from "vue3-carousel"
 import {usePackageStore} from "~/stores/packages";
 import {useFormStore} from "~/stores/form";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 definePageMeta({
   layout: 'custom'
@@ -32,7 +36,7 @@ const breakpoints = {
   },
   // 1024 and up
   1024: {
-    itemsToShow: 2,
+    itemsToShow: 1,
     snapAlign: 'start',
   },
 }
@@ -239,6 +243,7 @@ const getTeam = async () => {
 const limitedTeam = computed(() => listTeam.value.slice(0, 7));
 
 
+$gsap.registerPlugin(ScrollTrigger);
 
 onMounted(async () => {
   await getTeam()
@@ -253,6 +258,21 @@ onMounted(async () => {
   // await nextTick();
   codeWetravel.value = packageStore.code_w
   viewButton.value = true
+
+  const parallaxImages = document.querySelectorAll(".parallax-image");
+
+  parallaxImages.forEach((image) => {
+    $gsap.to(image, {
+      yPercent: -20,
+      ease: "none",
+      scrollTrigger: {
+        trigger: image.parentElement,  // Usa el contenedor padre como trigger
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  });
 
   const firstImages = document.querySelectorAll('.first-image');
   const secondImages = document.querySelectorAll('.second-image');
@@ -382,17 +402,17 @@ onMounted(async () => {
       <header class="h-[100vh] 2xl:h-[100vh] relative bg-secondary overflow-hidden grid grid-cols-2">
         <div class="col-span-1">
 <!--          <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[125vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>-->
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709050239382Slider%20copia%203%20machupicchu_1709050241.jpg" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[100vh] object-bottom"></nuxt-img>
-<!--          <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">-->
-<!--            <template v-for="paquete_destino in packages.paquetes_destinos">-->
-<!--              <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">-->
-<!--                <nuxt-img :src="destino_imagen.nombre" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[60vh] object-bottom"></nuxt-img>-->
-<!--              </slide>-->
-<!--            </template>-->
-<!--          </carousel>-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709050239382Slider%20copia%203%20machupicchu_1709050241.jpg" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[100vh] object-bottom"></nuxt-img>-->
+          <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">
+            <template v-for="paquete_destino in packages.paquetes_destinos">
+              <slide v-for="(destino_imagen, index) in paquete_destino.destinos.destino_imagen" :key="index">
+                <nuxt-img :src="destino_imagen.nombre" alt="" :placeholder="[50, 25, 75, 5]" class="parallax-image h-[125vh] 2xl:h-[125vh] object-cover w-full object-bottom"></nuxt-img>
+              </slide>
+            </template>
+          </carousel>
         </div>
-        <div class="col-span-1 grid items-center text-white bg-primary p-24 h-full 2xl:mb-40">
-          <div class="pt-24">
+        <div class="col-span-1 grid items-center text-white bg-primary px-24 h-full 2xl:mb-40">
+          <div class="">
             <h1 class="text-secondary mb-2">6 day | from $1234</h1>
             <div class="border-title-sm mb-2"></div>
             <h2 class="2xl:text-3xl text-xl font-semibold mb-6">{{ packages.titulo }}</h2>
@@ -486,6 +506,9 @@ onMounted(async () => {
 
 
 
+
+
+
 <!--            <div class="grid my-8 space-y-2">-->
 <!--              <div class="flex gap-2">-->
 <!--                <img src="/icons/location.svg" alt=""> <span class="font-bold">Start</span> Lima, Peru-->
@@ -515,47 +538,8 @@ onMounted(async () => {
               <img :src="packages.mapa" alt="" class="rounded-2xl mt-12 w-full">
             </article>
 
-            <article class="my-12" id="itinerary">
-              <h2 class="text-2xl font-bold mb-8">Itinerary</h2>
-              <div class="">
 
-                <div class="w-full mx-auto relative">
-
-                  <div v-for="(itinerary, index) in iti =  packages.paquete_itinerario.slice(0, showCount[packages.id])" :key="itinerary.id" class="flex item">
-
-                    <div class="relative w-20 text-center gap-12">
-                      <div class="absolute -z-10 left-1/2 top-0 bottom-0 border-l-2 border-dashed border-slate-300"></div>
-                      <div class=" py-2  font-bold text-xs" :class="[currentItem == index ? 'text-secondary' : 'text-slate-500']">DAY <span class="rounded-full px-2 py-1  text-white" :class="{'bg-red-700': packages.duracion == index + 1, 'bg-primary': index + 1 ==  1, 'bg-gray-500': index + 1 > 1}">{{index + 1}}</span></div>
-                    </div>
-                    <div class="space-y-2 w-full " :class="[index + 1 == items.length ? 'border-y' : 'border-t']">
-                      <div>
-                        <button @click="toggleItem(index)" class="w-full text-left p-4 flex justify-between items-center hover:bg-gray-200">
-                          {{ itinerary.itinerarios.titulo }}
-                          <span>
-                        {{ currentItem == index ? '-' : '+' }}
-                      </span>
-                        </button>
-                        <transition name="bottom">
-                          <div v-if="currentItem === index" class="p-4" v-html="itinerary.itinerarios.resumen">
-
-                          </div>
-                        </transition>
-                      </div>
-                    </div>
-                  </div>
-
-                  <button @click="expand(packages.id)" v-if="showCount[packages.id] < packages.paquete_itinerario.length" class="mt-4 p-4 bg-[#ffeece] mt-2 font-bold text-secondary rounded w-full hover:bg-secondary hover:text-white">
-                    View More
-                  </button>
-
-                  <button @click="contract(packages.id)" v-if="showCount[packages.id] > 4" class="px-4 py-2 w-full mt-2 rounded text-gray-400 hover:text-primary">
-                    View Less
-                  </button>
-
-                </div>
-              </div>
-
-            </article>
+            <Itinerary :listPackages="listPackages"></Itinerary>
 
 
           </div>
@@ -772,3 +756,30 @@ onMounted(async () => {
   </div>
 </template>
 
+<style scoped>
+.timeline-container {
+  border-left: 2px solid #ddd;
+  margin-left: 20px;
+  padding-left: 20px;
+}
+
+.timeline-day {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.timeline-header {
+  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.timeline-content {
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+  overflow: hidden;
+  /* Las alturas se gestionan dinámicamente con GSAP y el estado de apertura */
+}
+</style>
