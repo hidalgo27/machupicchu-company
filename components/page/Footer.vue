@@ -111,7 +111,9 @@
           </div>
         </div>
         <div>
-          <nuxt-img src="/images/team/women2.webp" class="w-[180px] mx-auto"></nuxt-img>
+          <div class="h-72 overflow-hidden">
+            <nuxt-img src="/images/home/angi.png" class="w-[180px] mx-auto"></nuxt-img>
+          </div>
           <nuxt-link to="#form-dream-adventure" class="btn-secondary block text-center w-full">Contact Us</nuxt-link>
         </div>
       </div>

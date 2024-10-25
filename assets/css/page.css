@@ -1,5 +1,15 @@
 @import "form.css";
 @import "button.css";
+
+.font-parisienne{
+    font-family: Parisienne, serif;
+}
+.font-playfair-display{
+    font-family: Playfair Display, serif;
+}
+.font-lora{
+    font-family: Lora, serif;
+}
 .vimeo-wrapper iframe {
     width: 100vw;
     height: 56.25vw;

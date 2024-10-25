@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import Angie from "~/components/page/video/Angie.vue";
+
 const { $gsap } = useNuxtApp()
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import {usePackageStore} from "~/stores/packages";
 import PopularPackages from "~/components/packages/PopularPackages.vue";
+import Fiorella from "~/components/page/video/Fiorella.vue";
 
 const packageStore = usePackageStore()
 
@@ -67,7 +70,7 @@ onMounted(async () => {
         <div class=" container ">
 <!--          Explora Perú <br>-->
           <div class="border-title mb-2"></div>
-          <h1 class="text-primary text-opacity-90 leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold">
+          <h1 class="text-primary text-opacity-90 leading-tight text-5xl 2xl:text-7xl tracking-wide font-bold">
           Libertad. <br>
             Aventura. <br>
           Posibilidades.</h1>
@@ -82,7 +85,7 @@ onMounted(async () => {
     </div>
 
 
-  <section class="bg-secondary bg-opacity-10 py-6">
+  <section class="bg-tertiary bg-opacity-10 py-6">
     <div class="container grid grid-cols-5 gap-6">
       <div class="text-center">
         <nuxt-img src="https://www.jacadatravel.com/wp-content/uploads/fly-images/374680/History@2x-128x128.png" class="mx-auto w-16 mb-2"></nuxt-img>
@@ -112,10 +115,11 @@ onMounted(async () => {
     </div>
   </section>
 
+
   <section class="container mt-32 mb-12">
     <div class="text-center text-primary">
       <div class="border-title mb-2 mx-auto"></div>
-      <h1 class="font-semibold text-4xl mb-6 title">Peru, upgraded</h1>
+      <h1 class="font-semibold text-4xl mb-6 title ">Peru, upgraded</h1>
       <p class="text-lg tracking-widest font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa deleniti dolor earum mollitia nulla quo reprehenderit tempore? Aspernatur atque consequatur culpa cum natus nulla odit ullam velit vero voluptas.</p>
     </div>
   </section>
@@ -123,11 +127,15 @@ onMounted(async () => {
     <div class="grid grid-cols-12 gap-6 items-center">
       <div class="col-span-4 text-primary">
         <div class="border-title mb-2"></div>
-        <h2 class="text-3xl font-semibold mb-6">En búsqueda de <br> nuevas <br> experiencias</h2>
+        <h2 class="text-3xl font-semibold mb-6 ">En búsqueda de <br> nuevas <br> experiencias</h2>
         <p class="tracking-widest">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aliquam culpa debitis dignissimos distinctio dolorem eligendi eum fugit necessitatibus nisi omnis ratione repellendus, saepe sequi! Explicabo itaque sed tempore.</p>
+        <div class="grid gap-6 mt-6">
+          <Fiorella></Fiorella>
+          <Angie></Angie>
+        </div>
       </div>
-      <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[1000px]">
-        <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/package/PERU-ADVENTURE_1710688514.jpg"  class="parallax-image absolute top-0 left-0 w-full h-auto"></nuxt-img>
+      <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[1100px]">
+        <nuxt-img src="/images/home/angi-maja.jpg"  class="parallax-image absolute top-0 left-0 w-full h-auto"></nuxt-img>
       </div>
     </div>
   </section>
@@ -136,7 +144,7 @@ onMounted(async () => {
     <div class="grid grid-cols-12 text-primary gap-6 items-center">
       <div class="col-span-4">
         <div class="border-title mb-2 "></div>
-        <h1 class="font-semibold text-4xl mb-6">Trip Inspiration</h1>
+        <h1 class="font-semibold text-4xl mb-6 ">Trip Inspiration</h1>
       </div>
       <div class="col-span-8 border-l-2 px-6">
         <p class=" tracking-widest">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores culpa deleniti dolor earum mollitia nulla quo reprehenderit tempore? Aspernatur atque consequatur culpa cum natus nulla odit ullam velit vero voluptas.</p>
@@ -312,7 +320,7 @@ onMounted(async () => {
               </div>
               <div class="text-center">
 <!--                <img src="https://epic.travel/wp-content/uploads/2019/05/talk-icon-blue.svg" alt="Phone Icon" class="rounded-full w-full">-->
-                <div class="p-12 bg-secondary rounded-full h-40 w-40 items-center flex justify-center mx-auto">
+                <div class="p-12 bg-tertiary rounded-full h-40 w-40 items-center flex justify-center mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14 text-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205 3 1m1.5.5-1.5-.5M6.75 7.364V3h-3v18m3-13.636 10.5-3.819" />
                   </svg>
@@ -331,7 +339,7 @@ onMounted(async () => {
               </div>
               <div class="text-center">
                 <!--                <img src="https://epic.travel/wp-content/uploads/2019/05/talk-icon-blue.svg" alt="Phone Icon" class="rounded-full w-full">-->
-                <div class="p-12 bg-secondary rounded-full h-40 w-40 items-center flex justify-center mx-auto">
+                <div class="p-12 bg-tertiary rounded-full h-40 w-40 items-center flex justify-center mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14 text-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42" />
                   </svg>
@@ -354,7 +362,7 @@ onMounted(async () => {
               </div>
               <div class="text-center">
                 <!--                <img src="https://epic.travel/wp-content/uploads/2019/05/talk-icon-blue.svg" alt="Phone Icon" class="rounded-full w-full">-->
-                <div class="p-12 bg-secondary rounded-full h-40 w-40 items-center flex justify-center mx-auto">
+                <div class="p-12 bg-tertiary rounded-full h-40 w-40 items-center flex justify-center mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-14 text-white">
                     <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
                   </svg>
@@ -401,7 +409,7 @@ onMounted(async () => {
   <section class="">
     <div class="grid grid-cols-12">
       <div class="col-span-5 overflow-hidden h-[700px] 2xl:h-[1200px]">
-        <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964235902portada%20gotoperu%20sacred_1708964236.jpg" class="parallax-image w-full"></nuxt-img>
+        <nuxt-img src="/images/home/footer-maja.jpg" class="parallax-image h-[800px] 2xl:h-[1400px] object-cover"></nuxt-img>
       </div>
       <div class="col-span-7 grid items-center text-white bg-primary p-24">
         <div class="">

@@ -30,15 +30,19 @@ export default defineNuxtConfig({
   },
 
   modules: [// needed
-  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt','@hypernym/nuxt-gsap'],
+  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@hypernym/nuxt-gsap', '@nuxt/scripts'],
   // gsap: {
   //   composables: true,
   //   provide: false,
   // },
   googleFonts: {
     families: {
-      Lato: [100, 300, 400, 700, 900],  // Puedes especificar los pesos de las fuentes que necesites
-    }
+      Lato: [100, 300, 400, 700, 900],  // Lato soporta estos pesos
+      Parisienne: [400],  // Parisienne solo soporta un peso (regular)
+      'Playfair+Display': [400, 700, 900],  // Playfair Display no soporta pesos 100 o 300
+      Lora: [400, 700],  // Lora soporta regular (400) y bold (700)
+    },
+    display: 'swap',
   },
 
   piniaPersistedstate: {

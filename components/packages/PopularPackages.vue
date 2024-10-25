@@ -134,8 +134,9 @@
 
     <div class="grid grid-cols-3 gap-6">
       <nuxt-link :to="'/ecuador-travel-packages/'+packages.url" class="bg-white  group cursor-pointer hover:shadow-lg transition duration-500 ease-in-out" v-for="(packages, index) in listPackages" :key="index">
-        <div class="overflow-hidden">
+        <div class="overflow-hidden relative">
           <nuxt-img :src="packages.imagen" :alt="packages.titulo" class="w-full object-cover h-[400px] transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
+          <span class="absolute bottom-0 left-0 p-1 m-3 rounded-lg bg-secondary font-normal text-white  ">{{ packages.duracion }} days</span>
         </div>
         <div class="p-6 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
           <div class="border-title mb-2 "></div>

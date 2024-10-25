@@ -27,23 +27,13 @@ export default {
       animation: {
         'slide-left-right': 'slide-left-right 0.5s ease-in-out forwards', // Duración y animación
       },
-    },
-    colors: {
-      "vtd-primary": colors.sky, // Light mode Datepicker color
-      "vtd-secondary": colors.gray, // Dark mode Datepicker color
-      blue: colors.blue,
-      green: colors.green,
-      red: colors.red,
-      amber: colors.amber,
-      gray: colors.gray,
-      white: colors.white,
-      yellow: colors.yellow,
-      fuchsia: colors.fuchsia,
-      cyan: colors.cyan,
-      primary: '#343a40',
-      secondary: '#C1AA7F',
-      tertiary: '#7c9aa3',
-      transparent: 'transparent',
+      colors: {
+        "vtd-primary": colors.sky, // Light mode Datepicker color
+        "vtd-secondary": colors.gray, // Dark mode Datepicker color
+        primary: '#343a40',
+        secondary: '#C1AA7F',
+        tertiary: '#bab86b',
+      },
     },
     container: {
       center: true,
