@@ -8,7 +8,7 @@ export const useDestinoStore = defineStore('DestinoStore', () => {
 		headers.append("Content-Type", "application/json");
 
 		try {
-			const res = await fetch("http://localhost:8000/api/destinations-hotels", {
+			const res = await fetch("https://api.machupicchu.company/api/destinations-hotels", {
 				method: "GET",
 				headers: headers,
 			});
