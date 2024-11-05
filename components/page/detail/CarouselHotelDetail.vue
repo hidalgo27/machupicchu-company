@@ -100,7 +100,7 @@ watch(
     onMounted(async ()=>{
       try {
         // Solicita los destinos y hoteles al backend
-        const response = await fetch('http://localhost:8000/api/destinations-hotels')
+        const response = await fetch('https://api.machupicchu.company/api/destinations-hotels')
         const data = await response.json()
         destinos.value = data
 
