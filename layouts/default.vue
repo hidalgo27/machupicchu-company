@@ -4,9 +4,12 @@
 
     <slot/>
 
-    <section class="py-2  mt-12 relative z-10">
+    <section class="  mt-12 relative z-10  h-auto overflow-hidden">
 
-      <form-footer-inquire></form-footer-inquire>
+        <nuxt-img src="/images/banners/banner-test2.jpg" class="  w-full h-full"></nuxt-img>
+      <div class="absolute inset-0 mt-0 2xl:mt-96">
+        <form-footer-inquire></form-footer-inquire>
+      </div>
     </section>
     <Footer></Footer>
 

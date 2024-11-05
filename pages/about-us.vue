@@ -10,7 +10,7 @@
 <!--    </div>-->
 <!--  </header>-->
 
-  <header class="h-[100vh] 2xl:h-[50vh] relative bg-cyan-800 overflow-hidden">
+  <header class="h-[100vh] 2xl:h-[50vh] relative bg-tertiary overflow-hidden">
 <!--    <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1708990714220Slider%20copia%20arequipa_1708990715.jpg" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[130vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>-->
     <div class="absolute  inset-0 w-full h-full">
       <div class="container grid items-center pt-16 h-full">

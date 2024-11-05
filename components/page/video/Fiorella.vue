@@ -4,23 +4,6 @@ const { onLoaded } = useScriptVimeoPlayer()
 const isPlaying = ref(false) // Estado para saber si el video está reproduciéndose o en pausa
 
 let player: any
-onLoaded(({ Vimeo }) => {
-  player = new Vimeo.Player(video.value, {
-    id: 1022937319,
-    controls: false,
-    responsive: true,
-    loop: true,
-  })
-
-  // Escuchar eventos de play y pause para actualizar el estado
-  player.on('play', () => {
-    isPlaying.value = true
-  })
-
-  player.on('pause', () => {
-    isPlaying.value = false
-  })
-})
 
 // Función para manejar el click del botón
 function togglePlayPause() {
@@ -30,10 +13,31 @@ function togglePlayPause() {
     player.play()
   }
 }
+
+onMounted(()=>{
+  onLoaded(({ Vimeo }) => {
+    player = new Vimeo.Player(video.value, {
+      id: 1022937319,
+      controls: false,
+      responsive: true,
+      loop: true,
+    })
+
+    // Escuchar eventos de play y pause para actualizar el estado
+    player.on('play', () => {
+      isPlaying.value = true
+    })
+
+    player.on('pause', () => {
+      isPlaying.value = false
+    })
+  })
+
+})
 </script>
 
 <template>
-  <div class="relative">
+  <div class="relative z-20">
     <div ref="video" />
     <div class="absolute bottom-0 inset-x-0 p-2 flex justify-between items-center">
       <div>

@@ -115,7 +115,7 @@
 
 <!--          <button  class="wtrvl-checkout_button btn-primary block w-full mb-2" id="wetravel_button_widget" data-env="https://www.wetravel.com" data-version="v0.2" data-uid="239346" :data-uuid="packages.codigo_f" :href="'https://www.wetravel.com/checkout_embed?uuid='+packages.codigo_f" >Book Now</button>-->
 <!--          <button v-show="packages.codigo_f" @click="pack(packages.codigo_f)" class="wtrvl-checkout_button btn-ternary mb-2 block w-full" id="wetravel_button_widget">Book Now</button>-->
-          <nuxt-link  :to="'/ecuador-travel-packages/'+packages.url" @click="viewGTM(packages.titulo, packages.duracion)" class="btn-secondary block">View details</nuxt-link>
+          <nuxt-link  :to="'/peru-travel-packages/'+packages.url" @click="viewGTM(packages.titulo, packages.duracion)" class="btn-secondary block">View details</nuxt-link>
 
 
 
@@ -133,10 +133,11 @@
 
 
     <div class="grid grid-cols-3 gap-6">
-      <nuxt-link :to="'/ecuador-travel-packages/'+packages.url" class="bg-white  group cursor-pointer hover:shadow-lg transition duration-500 ease-in-out" v-for="(packages, index) in listPackages" :key="index">
+      <nuxt-link :to="'/peru-travel-packages/'+packages.url" class="bg-white  group cursor-pointer hover:shadow-lg transition duration-500 ease-in-out" v-for="(packages, index) in listPackages" :key="index">
         <div class="overflow-hidden relative">
+          <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
           <nuxt-img :src="packages.imagen" :alt="packages.titulo" class="w-full object-cover h-[400px] transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
-          <span class="absolute bottom-0 left-0 p-1 m-3 rounded-lg bg-secondary font-normal text-white  ">{{ packages.duracion }} days</span>
+          <span class="absolute bottom-0 left-0 p-1 m-3 rounded-lg z-20 backdrop-blur-lg font-normal text-white  ">{{ packages.duracion }} days</span>
         </div>
         <div class="p-6 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
           <div class="border-title mb-2 "></div>

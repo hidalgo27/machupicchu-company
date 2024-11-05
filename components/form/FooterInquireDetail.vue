@@ -238,12 +238,12 @@ onMounted(async () => {
             <div class="text-left mt-6">
               <h2 class="text-lg text-secondary mb-5">Get a quote on this travel package:</h2>
 
-              <h2 class="text-xl text-primary mb-5 bg-white text-center px-5 py-2 border border-gray-300 text-primary font-semibold rounded-sm">
+              <h2 class="text-xl text-primary mb-5 bg-white/30 text-center px-5 py-2 border border-gray-300 font-semibold rounded-sm">
                 {{ formStore.titlePackages }}</h2>
 
               <h3 class="text-lg text-primary my-5">Hotel Category</h3>
               <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
-                <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
+                <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm ">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
                   </svg>
@@ -252,7 +252,7 @@ onMounted(async () => {
 
                 <div class="flex flex-col rounded-sm">
                   <input type="checkbox" id="hotel_5" class="peer hidden" value="5" v-model="hotel" />
-                  <label for="hotel_5" class="select-none bg-white cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                  <label for="hotel_5" class="select-none bg-white/30 cursor-pointer px-5 py-2 border border-gray-300 text-gray-500 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Luxury</h4>
@@ -267,7 +267,7 @@ onMounted(async () => {
 
                 <div class="flex flex-col rounded-sm">
                   <input type="checkbox" id="hotel_4" class="peer hidden" value="4" v-model="hotel" />
-                  <label for="hotel_4" class="select-none bg-white cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                  <label for="hotel_4" class="select-none bg-white/30 cursor-pointer px-5 py-2 border border-gray-300 text-gray-500 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Superior</h4>
@@ -282,7 +282,7 @@ onMounted(async () => {
 
                 <div class="flex flex-col rounded-sm">
                   <input type="checkbox" id="hotel_3" class="peer hidden" value="3" v-model="hotel" />
-                  <label for="hotel_3" class="select-none bg-white cursor-pointer px-5 py-2 border border-gray-300 text-gray-400 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
+                  <label for="hotel_3" class="select-none bg-white/30 cursor-pointer px-5 py-2 border border-gray-300 text-gray-500 rounded-sm divide-y divide-gray-400 transition-colors duration-200 ease-in-out peer-checked:border-2 peer-checked:border-primary peer-checked:text-primary peer-checked:divide-primary  ">
                     <div class="pb-1">
                       <!--                      <img src="/icons/hotel.svg" alt="">-->
                       <h4 class=" pt-1 text-center">Best Value</h4>
@@ -299,7 +299,7 @@ onMounted(async () => {
               </div>
               <h3 class="text-lg text-primary my-5">Number of travelers</h3>
               <div class="grid grid-cols-12 gap-6 my-3 overflow-x-scroll no-scrollbar focus:touch-pan-x">
-                <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm bg-gray-50">
+                <div class="col-span-12 hidden md:col-span-2 border md:flex justify-center items-center rounded-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
                   </svg>
@@ -308,12 +308,12 @@ onMounted(async () => {
                 <div class="col-span-12 md:col-span-10 grid grid-cols-7 gap-3">
                 <div class="flex" v-for="n in 6" :key="n">
                   <input type="radio" :id="'radio_'+n" class="peer hidden" :value="n" v-model="traveller" />
-                  <label :for="'radio_'+n" class="select-none w-full text-center cursor-pointer bg-white text-gray-800 rounded-sm px-5 py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> {{ n }} </label>
+                  <label :for="'radio_'+n" class="select-none w-full text-center cursor-pointer bg-white/30 text-gray-800 rounded-sm px-5 py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> {{ n }} </label>
                 </div>
 
                 <div class="flex">
                   <input type="radio" :id="'radio_7'" class="peer hidden" value="7+" v-model="traveller" />
-                  <label :for="'radio_7'" class="select-none w-full text-center cursor-pointer bg-white text-gray-800 rounded-sm py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> 11+ </label>
+                  <label :for="'radio_7'" class="select-none w-full text-center cursor-pointer bg-white/30 text-gray-800 rounded-sm py-2 transition-colors duration-200 ease-in-out peer-checked:bg-primary peer-checked:text-white"> 11+ </label>
                 </div>
                 </div>
 
@@ -323,19 +323,20 @@ onMounted(async () => {
 <!--              <h3 class="text-lg text-primary my-5">Contact information</h3>-->
 
               <form @submit.prevent="handleSubmit">
-                <div class="grid grid-cols-1 mt-6 gap-3">
+                <div class="grid grid-cols-1 mt-6 gap-5">
                   <div class="relative">
                     <div class="relative">
-                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>
                       <input
                           type="text"
                           name="search"
-                          class="is-input-ico peer"
+                          class="input-goto peer"
                           placeholder=" "
                           autocomplete="off"
                           v-model="fullName"
+                          id="fullName"
                       />
-                      <label class="is-input-ico-label">Full Name</label>
+                      <label class="input-goto-label" for="fullName">Full Name</label>
                       <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
@@ -348,10 +349,10 @@ onMounted(async () => {
 
                   <div class="grid grid-cols-2 gap-3">
                     <div class="relative">
-                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>
                       <input
                           type="text"
-                          class="is-input-ico peer"
+                          class="input-goto peer"
                           placeholder=" "
                           autocomplete="off"
                           v-model="phone"
@@ -359,7 +360,7 @@ onMounted(async () => {
                           id="phoneNumber"
                       />
                       <!--                    <input ref="phoneInputRef" v-model="phone" class="is-input-ico peer" placeholder=" " id="phoneNumber" type="tel" />-->
-                      <label class="is-input-ico-label">Phone Number</label>
+                      <label class="input-goto-label text-gray-500" for="phoneNumber">Phone Number</label>
                       <!--                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">-->
                       <!--                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
                       <!--                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />-->
@@ -383,10 +384,10 @@ onMounted(async () => {
 <!--                          <vue-tailwind-datepicker as-single no-input :formatter="formatter" v-model="formStore.travelDate" @click="onClickSomething()" class="calendar-w"/>-->
 <!--                        </template>-->
 <!--                      </VMenu>-->
-                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>
 
-                      <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="formStore.travelDate" input-classes="is-input-ico peer !pl-3"/>
-                      <label class="is-input-ico-label !pl-0" @click="showModalProcess = true">When</label>
+                      <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="formStore.travelDate" input-classes="input-goto peer !pl-3"/>
+                      <label class="absolute cursor-text text-gray-500 top-0 left-2 backdrop-blur-sm rounded-2xl px-1 transition-all duration-200 ease-in-out text-xs" @click="showModalProcess = true">When</label>
 
 
                     </div>
@@ -395,16 +396,17 @@ onMounted(async () => {
 
                   <div class="relative">
                     <div class="relative">
-                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>
                       <input
                           type="email"
                           name="search"
-                          class="is-input-ico peer"
+                          class="input-goto peer"
                           placeholder=" "
                           autocomplete="off"
                           v-model="userEmail"
+                          id="userEmail"
                       />
-                      <label class="is-input-ico-label">Email</label>
+                      <label class="input-goto-label" for="userEmail">Email</label>
                       <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
@@ -419,16 +421,17 @@ onMounted(async () => {
 
                   <div class="relative">
                     <div class="relative">
-                      <div class="bg-white absolute rounded-md inset-0 -z-10"></div>
+                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>
                     <textarea
                         type="text"
                         name="search"
-                        class="is-input-ico peer"
+                        class="input-goto peer !min-h-20"
                         placeholder=" "
                         autocomplete="off"
                         v-model="comment"
+                        id="commentInputRef"
                     />
-                      <label class="is-input-ico-label text-xs md:text-[15px]">What can we do for you? We have it all. Just ask!</label>
+                      <label class="input-goto-label text-xs md:text-[15px]" for="commentInputRef">What can we do for you? We have it all. Just ask!</label>
                       <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
@@ -474,7 +477,7 @@ onMounted(async () => {
           <div v-for="notification in notifications" :key="notification.id">
             <div
                 v-if="notification.type === 'success'"
-                class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white rounded-lg shadow-md"
+                class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white/30 rounded-lg shadow-md"
             >
               <div class="flex items-center justify-center w-12 bg-green-500">
                 <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -491,7 +494,7 @@ onMounted(async () => {
             </div>
 
             <div
-                class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white rounded-lg shadow-md"
+                class="flex w-full max-w-sm mx-auto mt-4 overflow-hidden bg-white/30 rounded-lg shadow-md"
                 v-if="notification.type === 'error'"
             >
               <div class="flex items-center justify-center w-12 bg-red-500">

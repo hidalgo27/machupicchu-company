@@ -89,12 +89,12 @@ const toggleWithGSAP = (index: number) => {
 
   <article class="my-12" id="itinerary" v-for="packages in listPackages" :key="packages.url">
     <h2 class="text-2xl font-bold mb-8">Itinerary</h2>
-    <div class="mb-4">
-      <button @click="expandAll" class="px-4 py-2 bg-green-500 text-white rounded mr-2">
-        Expandir Todo
+    <div class="mb-4 text-right">
+      <button @click="expandAll" class="px-2 py-1 bg-primary text-white text-xs rounded mr-2">
+        Expand all
       </button>
-      <button @click="collapseAll" class="px-4 py-2 bg-red-500 text-white rounded">
-        Contraer Todo
+      <button @click="collapseAll" class="px-2 py-1 bg-tertiary text-xs text-white rounded">
+        Collapse all
       </button>
     </div>
 

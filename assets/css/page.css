@@ -25,11 +25,12 @@
     py-5
     px-2
     /*bg-gray-50*/
-    border-b-4
+    /*border-b-4*/
     border-gray-600
     border-opacity-10
     text-gray-200
     text-sm
+        2xl:text-sm
     hover:bg-white
     hover:opacity-100
     hover:text-gray-800
@@ -41,7 +42,13 @@
     transition duration-500
     sm:px-6;
 }
-
+.v-popper__inner{
+    background: transparent !important;
+    color: transparent !important;
+    border-radius: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
 .mask{
     position: absolute;
     top: 0;
@@ -50,7 +57,9 @@
     width: 100%;
     z-index: 10;
     /*background: url(https://happygringo.com/wp-content/themes/betheme/images/videomask.png) repeat 50%;*/
-    background: rgba(0, 0, 0, 0.1)
+    /*background: rgba(0, 0, 0, 0.1)*/
+    /*background: rgb(255,255,255);*/
+    /*background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(0, 0, 0, 0.8) 100%);*/
 }
 .menu-list.active{
     @apply
@@ -128,4 +137,15 @@
     position: absolute;
     top: 300px;
     left: 4%;
+}
+
+.gradient-cicle-beige{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0) -50%, rgba(78, 45, 20, 0.3) 90%);
+    /*background: rgba(43, 23, 8, 0.4);*/
+    /*background: rgb(255,255,255);*/
+    /*background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(43, 23, 8, 0.6) 100%);*/
+}
+.hotel-img.active{
+    @apply border-tertiary border-4 shadow-lg text-black  grayscale-0;
 }

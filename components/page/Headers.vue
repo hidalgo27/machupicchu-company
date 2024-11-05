@@ -1,9 +1,13 @@
 <template>
   <div class="">
-    <div class="shadow bg-secondary bg-opacity-95 hidden sm:block">
+    <div :class="`shadow ${bgColor} bg-opacity-95 hidden sm:block`">
       <div class="container flex justify-between py-6 items-center">
         <div class="flex items-center gap-4">
-          <nuxt-link to="/"><nuxt-img src="/images/logos/logo-mapi.svg" class="w-[150px] md:w-[200px]"></nuxt-img></nuxt-link>
+          <nuxt-link to="/">
+            <div>
+              <nuxt-img src="/images/logos/logo-mapi.svg" class="w-[150px] md:w-[200px]"></nuxt-img>
+            </div>
+          </nuxt-link>
           <Typing></Typing>
         </div>
         <div class="md:hidden">
@@ -18,9 +22,9 @@
         </div>
       </div>
     </div>
-    <div class="bg-gray-900/70 backdrop-blur-sm hidden sm:block">
+    <div class="bg-gray-700/70 backdrop-blur-sm hidden sm:block">
       <nav class="container flex justify-center text-center">
-        <nuxt-link to="/ecuador-travel-packages" class="menu-list" active-class="active">Peru Travel Packages</nuxt-link>
+        <nuxt-link to="/peru-travel-packages" class="menu-list" active-class="active">Peru Travel Packages</nuxt-link>
         <nuxt-link to="/destinations" class="menu-list" active-class="active">Destinations</nuxt-link>
         <nuxt-link to="/hotels" class="menu-list" active-class="active">Hotel</nuxt-link>
         <!--      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>-->
@@ -37,12 +41,12 @@
 
           <template #popper>
             <!--            <button v-close-popper>Close</button>-->
-            <div class="flex">
-              <nuxt-link v-close-popper to="/why-book-with-us" class="menu-list " active-class="active">Why book with us</nuxt-link>
-              <nuxt-link v-close-popper to="/travel-with-confidence" class="menu-list" active-class="active">Travel with confidence</nuxt-link>
-              <nuxt-link v-close-popper to="/booking-terms-and-conditions" class="menu-list" active-class="active">booking terms and conditions</nuxt-link>
-              <nuxt-link v-close-popper to="/about-us" class="menu-list" active-class="active">About us</nuxt-link>
-              <nuxt-link v-close-popper to="/frequently-asked-questions" class="menu-list" active-class="active">frequently Asked Questions</nuxt-link>
+            <div class="flex bg-gray-900/70 backdrop-blur-sm">
+              <nuxt-link v-close-popper to="/why-book-with-us" class="menu-list text-sm " active-class="active">Why book with us</nuxt-link>
+              <nuxt-link v-close-popper to="/travel-with-confidence" class="menu-list text-sm" active-class="active">Travel with confidence</nuxt-link>
+              <nuxt-link v-close-popper to="/booking-terms-and-conditions" class="menu-list text-sm" active-class="active">booking terms and conditions</nuxt-link>
+              <nuxt-link v-close-popper to="/about-us" class="menu-list text-sm" active-class="active">About us</nuxt-link>
+              <nuxt-link v-close-popper to="/frequently-asked-questions" class="menu-list text-sm" active-class="active">frequently Asked Questions</nuxt-link>
             </div>
           </template>
         </VDropdown>
@@ -64,7 +68,7 @@
           </svg>
         </nuxt-link>
 
-        <nuxt-link to="/ecuador-travel-packages" class="block menu-list-m" active-class="active">
+        <nuxt-link to="/pages/peru-travel-packages" class="block menu-list-m" active-class="active">
 
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-6 w-6 mx-auto">
             <path stroke-linecap="round" stroke-linejoin="round" d="m6.115 5.19.319 1.913A6 6 0 0 0 8.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 0 0 2.288-4.042 1.087 1.087 0 0 0-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 0 1-.98-.314l-.295-.295a1.125 1.125 0 0 1 0-1.591l.13-.132a1.125 1.125 0 0 1 1.3-.21l.603.302a.809.809 0 0 0 1.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 0 0 1.528-1.732l.146-.292M6.115 5.19A9 9 0 1 0 17.18 4.64M6.115 5.19A8.965 8.965 0 0 1 12 3c1.929 0 3.716.607 5.18 1.64" />
@@ -121,4 +125,31 @@ import {usePackageStore} from "~/stores/packages";
 import Nav from "~/components/page/Nav.vue";
 import Typing from "~/components/page/Typing.vue";
 const packageStore = usePackageStore()
+
+const route = useRoute()
+const bgColor = ref('bg-gray-500') // Color de fondo inicial
+
+// Función para verificar la ruta y establecer el color
+const updateBgColor = () => {
+  if (route.path === '/why-book-with-us' || route.path === '/hotels' || route.path === '/about-us' ) {
+    bgColor.value = 'bg-tertiary' // Color específico para estas rutas
+  }
+  else if (route.path === '/peru-travel-packages') {
+    bgColor.value = 'bg-white/50'
+  }
+  else {
+    bgColor.value = 'bg-secondary' // Color para otras rutas
+  }
+}
+
+// Llama a la función en el montaje inicial
+onMounted(() => {
+  updateBgColor()
+})
+
+// Observa cambios en route.path para detectar correctamente cambios de ruta
+watch(() => route.path, () => {
+  updateBgColor()
+})
+
 </script>

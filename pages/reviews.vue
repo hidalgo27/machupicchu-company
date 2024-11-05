@@ -5,15 +5,15 @@
 <!--      <h1 class="text-5xl font-semibold text-gray-50">Reviews and Testimonials</h1>-->
 <!--    </div>-->
 <!--  </section>-->
-  <header class="h-[75vh] 2xl:h-[60vh] relative">
-    <nuxt-img src="/images/team/gotoecuador-team1.webp" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover w-screen h-full"></nuxt-img>
-        <div class="absolute inset-x-0 bottom-0">
-          <div class="container">
-            <h1 class="text-4xl py-6 font-semibold text-gray-50">
-              Reviews and Testimonials
-            </h1>
-          </div>
-        </div>
+  <header class="h-[100vh] 2xl:h-[90vh] relative overflow-hidden">
+    <nuxt-img src="/images/banners/reviews.jpg" :placeholder="[50, 25, 75, 5]" alt="" class="object-cover h-[100vh] 2xl:h-[90vh] object-center w-full"></nuxt-img>
+<!--        <div class="absolute inset-x-0 bottom-0">-->
+<!--          <div class="container">-->
+<!--            <h1 class="text-4xl py-6 font-semibold text-gray-50">-->
+<!--              Reviews and Testimonials-->
+<!--            </h1>-->
+<!--          </div>-->
+<!--        </div>-->
   </header>
   <section class="container py-12 text-gray-500 text-center">
     <p>Experience Ecuador with an award-winning team on a completely customized, private or small group tour for an authentic trip of a lifetime. With our 97% satisfaction rate, round-the-clock local support and 100% financial protection, explore 20+ enchanting destinations around the land of the Incas safely and seamlessly. Our 9,000+ enchanted guests will vouch for us.</p>

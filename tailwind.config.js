@@ -32,7 +32,8 @@ export default {
         "vtd-secondary": colors.gray, // Dark mode Datepicker color
         primary: '#343a40',
         secondary: '#C1AA7F',
-        tertiary: '#bab86b',
+        tertiary: '#8aacb6',
+        quaternary: '#bab86b',
       },
     },
     container: {

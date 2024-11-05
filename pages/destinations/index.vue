@@ -3,6 +3,7 @@ import {usePackageStore} from "~/stores/packages";
 
 const { $gsap } = useNuxtApp()
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import HotelDestino from "~/components/page/destino/HotelDestino.vue";
 
 const packageStore = usePackageStore()
 
@@ -38,8 +39,9 @@ onMounted(async () => {
 <template>
   <div>
   <header class="h-[100vh] 2xl:h-[90vh] relative bg-secondary overflow-hidden">
+    <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
     <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1708990714220Slider%20copia%20arequipa_1708990715.jpg" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[130vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>
-    <div class="absolute  inset-0 w-full h-full">
+    <div class="absolute  inset-0 w-full h-full z-20">
       <div class="container grid items-end pb-12 h-full">
         <div class="">
           <div class="border-2 border-white w-8 mb-2"></div>
@@ -60,7 +62,8 @@ onMounted(async () => {
           <h2 class="text-3xl font-semibold mb-6">Unveil the <br>Wonders of Peru</h2>
           <p class="tracking-widest">Discover Peru and let yourself be inspired by its ancient treasures and stunning landscapes. Among the towering Andean peaks, marvels like Machu Picchu and the historic city of Cusco stand as witnesses to the fascinating cultural encounter between the Incas and the Spanish, shaping the country’s rich history.</p>
         </div>
-        <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[900px] group">
+        <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[900px] group relative">
+          <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
           <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image h-[920px] 2xl:h-[1200px] object-cover object-center absolute top-0 left-0 w-full"></nuxt-img>
           <div class="absolute bottom-0 inset-0 items-center grid text-center text-3xl z-10 group-hover:backdrop-blur-sm group-hover:bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
             Machu Picchu
@@ -74,7 +77,8 @@ onMounted(async () => {
 
     <div class="container grid grid-cols-4 gap-6 2xl:grid-cols-4 my-6">
       <nuxt-link :to="'/destinations/'+destination.url" class="relative group" v-for="destination in listPackages">
-        <div class="overflow-hidden">
+        <div class="overflow-hidden relative">
+          <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
           <nuxt-img :src="destination.imagen" class="object-cover h-[32rem]  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
         </div>
 
@@ -211,21 +215,26 @@ onMounted(async () => {
 
 
 
-    <section class="">
-      <div class="grid grid-cols-12">
-        <div class="col-span-5 overflow-hidden h-[700px] 2xl:h-[900px]">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709049548333Slider%20copia%203%20cusco_1709049549.jpg" class="parallax-image h-[900px] 2xl:h-[1200px] object-cover object-center w-full"></nuxt-img>
-        </div>
-        <div class="col-span-7 grid items-center text-white bg-primary p-24">
-          <div class="">
-            <div class="border-title-sm mb-2"></div>
-            <h2 class="text-3xl font-semibold mb-6">PERU HIGHLIGHTS</h2>
-            <p class=" tracking-widest font-light 2xl:w-1/2">Exploring Peru natural and cultural diversity throughout four regions inside the country. Ecuador's varied geography is a delight for travelers. Formally categorized into four distinct sections, each region possesses its own distinctive allure and entices explorers in pursuit of varied encounters.</p>
+<!--    <section class="">-->
+<!--      <div class="grid grid-cols-12">-->
+<!--        <div class="col-span-5 overflow-hidden h-[700px] 2xl:h-[900px]">-->
+<!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709049548333Slider%20copia%203%20cusco_1709049549.jpg" class="parallax-image h-[900px] 2xl:h-[1200px] object-cover object-center w-full"></nuxt-img>-->
+<!--        </div>-->
+<!--        <div class="col-span-7 grid items-center text-white bg-primary p-24">-->
+<!--          <div class="">-->
+<!--            <div class="border-title-sm mb-2"></div>-->
+<!--            <h2 class="text-3xl font-semibold mb-6">PERU HIGHLIGHTS</h2>-->
+<!--            <p class=" tracking-widest font-light 2xl:w-1/2">Exploring Peru natural and cultural diversity throughout four regions inside the country. Ecuador's varied geography is a delight for travelers. Formally categorized into four distinct sections, each region possesses its own distinctive allure and entices explorers in pursuit of varied encounters.</p>-->
 
-            <button class="btn-secondary mt-6">Get Started</button>
-          </div>
-        </div>
-      </div>
+<!--            <button class="btn-secondary mt-6">Get Started</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </section>-->
+
+    <section>
+
+      <HotelDestino></HotelDestino>
     </section>
 
 
