@@ -22,10 +22,10 @@
       <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">
         <slide class="" v-for="hotel in selectedDestino.hoteles">
           <div class="grid grid-cols-12 gap-4 items-center mb-4 bg-white w-full">
-            <div class="col-span-3 md:col-span-6">
+            <div class="col-span-12 md:col-span-6">
               <img :src="hotel.imagen" alt="" class="object-cover w-full h-full">
             </div>
-            <div class="col-span-3 md:col-span-6 p-6">
+            <div class="col-span-12 md:col-span-6 p-6">
               <h3 class="font-semibold my-4">{{hotel.nombre}}</h3>
 
               <div class="font-light" v-html="hotel.descripcion"></div>

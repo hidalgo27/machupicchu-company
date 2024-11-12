@@ -1,14 +1,24 @@
 <template>
 
+  <section class="h-[100vh] 2xl:h-[90vh] relative">
+    <nuxt-img :src="'/images/banners/destinations/'+route.params.destino+'.webp'" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover object-center w-full h-[100vh] 2xl:h-[90vh]"></nuxt-img>
 
-  <section class="h-[75vh] 2xl:h-[60vh] relative">
-    <nuxt-img :src="'/images/banners/destinations/'+route.params.destino+'.webp'" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover object-bottom w-full h-[75vh] 2xl:h-[60vh]"></nuxt-img>
+<!--    <div class="absolute inset-x-0 bottom-0">-->
+<!--      <div class="container">-->
+<!--        <h1 class="text-4xl py-6 font-semibold text-gray-50 capitalize">-->
+<!--          {{ destino }} Tours-->
+<!--        </h1>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="absolute inset-x-0 bottom-0">
-      <div class="container">
-        <h1 class="text-4xl py-6 font-semibold text-gray-50 capitalize">
-          {{ destino }} Tours
-        </h1>
+    <div class="absolute  inset-0 w-full h-full z-20">
+      <div class="container grid items-end pb-12 h-full">
+        <div class="">
+          <div class="border-2 border-white w-8 mb-2"></div>
+          <h1 class="text-white text-opacity-70 leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold capitalize">{{ destino }} Tours</h1>
+
+<!--          <p class="text-white text-xl   tracking-widest font-light mt-5">Unveil the Wonders of a Journey Through History and Nature.</p>-->
+        </div>
       </div>
     </div>
   </section>

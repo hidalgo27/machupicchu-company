@@ -132,7 +132,7 @@
   <section class="container">
 
 
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       <nuxt-link :to="'/peru-travel-packages/'+packages.url" class="bg-white  group cursor-pointer hover:shadow-lg transition duration-500 ease-in-out" v-for="(packages, index) in listPackages" :key="index">
         <div class="overflow-hidden relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>

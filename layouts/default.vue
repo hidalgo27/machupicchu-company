@@ -4,12 +4,11 @@
 
     <slot/>
 
-    <section class="  mt-12 relative z-10  h-auto overflow-hidden">
-
-        <nuxt-img src="/images/banners/banner-test2.jpg" class="  w-full h-full"></nuxt-img>
-      <div class="absolute inset-0 mt-0 2xl:mt-96">
+    <section class=" relative z-10  h-auto overflow-hidden">
+      <div class="md:absolute md:inset-0 mt-0 2xl:mt-96">
         <form-footer-inquire></form-footer-inquire>
       </div>
+      <nuxt-img src="/images/banners/banner-test2.webp" class="-mt-80 md:-mt-0 w-full h-full"></nuxt-img>
     </section>
     <Footer></Footer>
 

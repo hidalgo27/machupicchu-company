@@ -5,10 +5,15 @@ import Wetravel from "~/components/Wetravel.vue";
 
 const { $gsap } = useNuxtApp()
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import IconPackage from "~/components/page/package/IconPackage.vue";
 
 const packageStore = usePackageStore()
 
 const listPackages = ref([])
+
+const loading = ref(true)
+const video = ref()
+const { onLoaded } = useScriptVimeoPlayer()
 
 const getPackage = async () => {
   const res:any = await packageStore.getPackage()
@@ -16,6 +21,7 @@ const getPackage = async () => {
 }
 
 $gsap.registerPlugin(ScrollTrigger);
+let player: any
 onMounted(async () => {
   await getPackage()
 
@@ -33,6 +39,24 @@ onMounted(async () => {
       },
     });
   });
+
+  onLoaded(({ Vimeo }) => {
+    player = new Vimeo.Player(video.value, {
+      id: 1028176645,
+      autoplay: true,
+      // background: true,
+      // transparent: true,
+      loop: true,
+      controls: false,
+      // responsive: true,
+      // autopause: true,
+      muted: true
+    })
+    player.on('loaded', () => {
+      loading.value = false // Oculta el indicador de carga cuando el video está listo
+    })
+  })
+
 })
 </script>
 <template>
@@ -50,15 +74,28 @@ onMounted(async () => {
 <!--      </div>-->
 <!--    </section>-->
 
-    <header class="h-[100vh] 2xl:h-[90vh] relative bg-secondary overflow-hidden">
-      <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
-      <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709050239382Slider%20copia%203%20machupicchu_1709050241.jpg" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[130vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>
+    <header class="h-[100vh] 2xl:h-[90vh] relative  overflow-hidden">
+      <div class="absolute inset-0 gradient-cicle-gray z-10 items-center flex justify-center">
+        <div v-if="loading" class="mt-40 text-center">
+          <!-- Indicador de carga usando clases de Tailwind -->
+          <!--      <nuxt-img src="/images/banners/sacsayhuaman.jpg" :placeholder="[50, 25, 75, 5]" alt="" class=" h-[125vh] 2xl:h-[130vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>-->
+          Cargando ..
+        </div>
+      </div>
+<!--      <nuxt-img src="/images/banners/mapi2.jpg" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[130vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>-->
+<!--      <video autoplay muted loop class="absolute inset-0 w-full  h-full object-cover">-->
+<!--        <source src="/videos/tren.mov" type="video/mp4" />-->
+<!--        Tu navegador no soporta el video en HTML5.-->
+<!--      </video>-->
+      <div v-show="!loading" ref="video" loading="lazy" class="vimeo-wrapper"></div>
+<!--      <div class="vimeo-wrapper">-->
+<!--      <iframe src="https://player.vimeo.com/video/1028176645?background=1&autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1" frameborder="0" allow="autoplay; fullscreen" class=""></iframe>-->
+<!--      </div>-->
       <div class="absolute  inset-0 w-full h-full z-20">
         <div class="container grid items-end pb-12 h-full">
           <div class="">
             <div class="border-2 border-white w-8 mb-2"></div>
             <h1 class="text-white text-opacity-70 leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold">
-              Peru
               Travel
               Packages</h1>
 
@@ -69,39 +106,11 @@ onMounted(async () => {
       </div>
     </header>
 
-    <section class="bg-secondary bg-opacity-10 py-6">
-      <div class="container grid grid-cols-4 gap-6">
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-personalize-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">Fully Customizable</h3>
-<!--          <p class="font-light">for world famous ancient ruins and fascinating insights into the Incan Empire</p>-->
-        </div>
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-services-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">Personalized service</h3>
-<!--          <p class="font-light">made from fresh fish and marinated in lime juice is just one of Peru's many gourmet delights</p>-->
-        </div>
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-hotels-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">Handpicked hotels</h3>
-<!--          <p class="font-light">biking, horse riding and ancient ruins in the Sacred Valley</p>-->
-        </div>
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-testimonials-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">5000 + testimonials</h3>
-<!--          <p class="font-light">for luxury cruises, secluded lodge retreats, canopy walkways and plenty of incredible wildlife</p>-->
-        </div>
-<!--        <div class="text-center">-->
-<!--          <nuxt-img src="https://www.jacadatravel.com/wp-content/uploads/fly-images/374671/Boat@2x-128x128.png" class="mx-auto w-16 mb-2"></nuxt-img>-->
-<!--          <h3 class="font-semibold">Northern Beaches</h3>-->
-<!--          <p class="font-light">for relaxation and sunset cruises on Peru's rugged coastline</p>-->
-<!--        </div>-->
-      </div>
-    </section>
+    <IconPackage></IconPackage>
 
     <section class="container mt-16 mb-6">
       <div class="grid grid-cols-12 gap-6">
-        <div class="col-span-5 grid items-center">
+        <div class="col-span-12 md:col-span-5 grid items-center">
           <div class="">
             <div class="border-title mb-2"></div>
             <h2 class="text-3xl font-semibold mb-6">The perfect <br> itinerary for you</h2>
@@ -109,7 +118,7 @@ onMounted(async () => {
           </div>
         </div>
 
-        <div class="col-span-7 bg-amber-300  relative items-end grid parallax-container  overflow-hidden h-[700px] 2xl:h-[1000px]">
+        <div class="col-span-12 md:col-span-7 bg-amber-300  relative items-end grid parallax-container  overflow-hidden h-[700px] 2xl:h-[1000px]">
           <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image  h-[920px] 2xl:h-[1300px] absolute inset-0 object-cover w-full"></nuxt-img>
 
           <div class="p-6 m-6 bg-white 2xl:w-1/2 w-3/5 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
@@ -131,7 +140,7 @@ onMounted(async () => {
 
     <PopularPackages :listPackages="listPackages"></PopularPackages>
 
-    <section class="pl-6 mt-32">
+    <section class="pl-6 mt-32 hidden">
       <div class="grid grid-cols-12 gap-6 items-center">
         <div class="col-span-4 text-primary p-24">
           <div class="border-title mb-2"></div>
@@ -148,7 +157,7 @@ onMounted(async () => {
       </div>
     </section>
 
-    <div class="px-6 grid grid-cols-4 gap-6 2xl:grid-cols-4 my-6">
+    <div class="px-6 grid grid-cols-4 gap-6 2xl:grid-cols-4 my-6 hidden">
       <div class="relative group">
         <div class="overflow-hidden relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>

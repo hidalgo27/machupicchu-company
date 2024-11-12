@@ -408,7 +408,7 @@ onMounted(async () => {
 <!--      </div>-->
 
       <header class="h-[100vh] 2xl:h-[100vh] relative bg-secondary overflow-hidden grid grid-cols-2">
-        <div class="col-span-1">
+        <div class="col-span-2 md:col-span-1">
 <!--          <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[125vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>-->
 <!--          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709050239382Slider%20copia%203%20machupicchu_1709050241.jpg" alt="" :placeholder="[50, 25, 75, 5]" class="object-cover w-full h-[75vh] 2xl:h-[100vh] object-bottom"></nuxt-img>-->
           <carousel  ref="carouselRef" :wrap-around="true" :breakpoints="breakpoints">
@@ -419,7 +419,7 @@ onMounted(async () => {
             </template>
           </carousel>
         </div>
-        <div class="col-span-1 grid items-center text-white bg-primary px-24 h-full 2xl:mb-40">
+        <div class="col-span-2 md:col-span-1  items-center text-white bg-primary px-24 h-full 2xl:mb-40 hidden md:grid">
           <div class="">
 
             <div class="text-secondary mb-2 flex gap-2 items-center">
@@ -483,7 +483,7 @@ onMounted(async () => {
 
 
 
-      <section class="my-12">
+      <section class="my-12 hidden md:block">
         <div class="container grid grid-cols-3 text-center">
           <div class="">
 <!--            <nuxt-img src="/icons/location-2.svg" class="h-16 mx-auto mb-2"></nuxt-img>-->
@@ -548,7 +548,7 @@ onMounted(async () => {
 
       <section class="">
         <div class="container grid md:grid-cols-12 gap-12">
-          <div class="md:col-span-8">
+          <div class="md:col-span-8 order-2 md:order-1">
 
 <!--              <div class="flex gap-6 my-5 overflow-x-scroll focus:touch-pan-x">-->
 <!--                <a href="#overview"  class="text-sm py-2 bg-slate-100 text-gray-800 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Overview</a>-->
@@ -617,20 +617,14 @@ onMounted(async () => {
 
               <CarouselHotelDetail :listPackages="listPackages"></CarouselHotelDetail>
 
-              <div class="grid grid-cols-1">
-
-
-
-              </div>
-
             </article>
 
 
           </div>
-          <div class="md:col-span-3 z-10">
+          <div class="md:col-span-3 order-1 md:order-2 z-10 -mt-40 md:-mt-0">
 
 
-            <div class="flex  gap-3 ">
+            <div class="flex backdrop-blur bg-white/70 p-6 gap-3 ">
 
               <div class="flex-1  flex items-center" v-if="packages.is_p_t == 1">
 
@@ -837,17 +831,17 @@ onMounted(async () => {
 
     <section>
       <div class="grid grid-cols-12">
-        <div class="col-span-5 overflow-hidden h-[700px] 2xl:h-[1200px] relative">
+        <div class="col-span-12 md:col-span-5 overflow-hidden relative">
 
 <!--          <nuxt-img src="/images/team/maja-angi.jpg" class="parallax-image h-[800px] 2xl:h-[1600px] object-cover"></nuxt-img>-->
           <Fiorella></Fiorella>
           <Angie></Angie>
         </div>
-        <div class="col-span-7 grid items-center text-white bg-primary p-24">
+        <div class="col-span-12 md:col-span-7 grid items-center text-white bg-primary p-12 md:p-24">
           <div class="">
             <div class="border-title-sm mb-2"></div>
             <h2 class="text-3xl font-semibold mb-6">Lorem ipsum dolor sit amet</h2>
-            <p class=" tracking-widest font-light w-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aliquam culpa debitis dignissimos distinctio dolorem eligendi eum fugit necessitatibus nisi omnis ratione repellendus, saepe sequi! Explicabo itaque sed tempore.</p>
+            <p class=" tracking-widest font-light md:w-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aliquam culpa debitis dignissimos distinctio dolorem eligendi eum fugit necessitatibus nisi omnis ratione repellendus, saepe sequi! Explicabo itaque sed tempore.</p>
             <div class="mt-12">
               <nuxt-link to="#form-dream-adventure" class="btn-ternary">Get a Quote</nuxt-link>
             </div>

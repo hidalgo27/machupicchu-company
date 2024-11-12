@@ -1,6 +1,6 @@
 <template>
 
-  <section class="bg-gray-100 -z-1 relative py-14 mt-40">
+  <section class="bg-gray-100 -z-1 relative py-14 md:t-40">
     <div class="container grid grid-cols-2 items-center">
       <div class="">
         <h1 class="md:text-5xl text-2xl font-semibold ">TRAVEL WITH CONFIDENCE</h1>

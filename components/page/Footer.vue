@@ -21,7 +21,7 @@
           </p>
           <ul class="mt-2 space-y-2">
             <li>
-              <nuxt-link to="/pages/peru-travel-packages" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Peru Travel Packages</nuxt-link>
+              <nuxt-link to="/peru-travel-packages" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Peru Travel Packages</nuxt-link>
             </li>
 <!--            <li>-->
 <!--              <a href="#" class="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400">Days Tours</a>-->

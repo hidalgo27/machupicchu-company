@@ -4,19 +4,42 @@ import {usePackageStore} from "~/stores/packages";
 const { $gsap } = useNuxtApp()
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HotelDestino from "~/components/page/destino/HotelDestino.vue";
+import IconPackage from "~/components/page/package/IconPackage.vue";
 
 const packageStore = usePackageStore()
 
 const listPackages = ref([])
+
+const loading = ref(true)
+const video = ref()
+const { onLoaded } = useScriptVimeoPlayer()
+
 
 const getPackage = async () => {
   const res:any = await packageStore.getDestinations()
   listPackages.value = res
 }
 
-
 $gsap.registerPlugin(ScrollTrigger);
+let player: any
 onMounted(async () => {
+  onLoaded(({ Vimeo }) => {
+    player = new Vimeo.Player(video.value, {
+      id: 1028177006,
+      autoplay: true,
+      // background: true,
+      // transparent: true,
+      loop: true,
+      controls: false,
+      // responsive: true,
+      // autopause: true,
+      muted: true
+    })
+    player.on('loaded', () => {
+      loading.value = false // Oculta el indicador de carga cuando el video está listo
+    })
+  })
+
   await getPackage()
 
   const parallaxImages = document.querySelectorAll(".parallax-image");
@@ -33,14 +56,25 @@ onMounted(async () => {
       },
     });
   });
+
 })
 
 </script>
 <template>
   <div>
-  <header class="h-[100vh] 2xl:h-[90vh] relative bg-secondary overflow-hidden">
-    <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
-    <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1708990714220Slider%20copia%20arequipa_1708990715.jpg" :placeholder="[50, 25, 75, 5]" alt="" class="parallax-image h-[125vh] 2xl:h-[130vh] object-cover w-full object-bottom bottom-0 "></nuxt-img>
+  <header class="h-[100vh] 2xl:h-[90vh] relative  overflow-hidden">
+    <div class="absolute inset-0 gradient-cicle-gray z-10 items-center flex justify-center">
+      <div v-if="loading" class="mt-40 text-center">
+        Cargando ..
+      </div>
+    </div>
+
+<!--    <video autoplay muted loop class="absolute inset-0 w-full  h-full object-cover">-->
+<!--      <source src="/videos/destination.mp4" type="video/mp4" />-->
+<!--      Tu navegador no soporta el video en HTML5.-->
+<!--    </video>-->
+
+    <div v-show="!loading" ref="video" loading="lazy" class="vimeo-wrapper"></div>
     <div class="absolute  inset-0 w-full h-full z-20">
       <div class="container grid items-end pb-12 h-full">
         <div class="">
@@ -55,12 +89,12 @@ onMounted(async () => {
     </div>
   </header>
 
-    <section class="container mt-32">
+    <section class="container mt-32 hidden md:block">
       <div class="grid grid-cols-12 gap-6 items-center">
         <div class="col-span-4 text-primary">
           <div class="border-title mb-2"></div>
           <h2 class="text-3xl font-semibold mb-6">Unveil the <br>Wonders of Peru</h2>
-          <p class="tracking-widest">Discover Peru and let yourself be inspired by its ancient treasures and stunning landscapes. Among the towering Andean peaks, marvels like Machu Picchu and the historic city of Cusco stand as witnesses to the fascinating cultural encounter between the Incas and the Spanish, shaping the country’s rich history.</p>
+          <p class="tracking-widest">Peru is a country with endless tourist destinations to explore. Do not miss the opportunity to travel to the most exclusive beaches of Peru, visit the citadel of Machu Picchu on luxury trains, and explore the Peruvian Amazon with the most luxurious cruises that only Machu Picchu Company can offer to all our exclusive travelers. Make sure you visit all the main tourist destinations in Peru with the comforts and luxuries that our organization provides you.</p>
         </div>
         <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[900px] group relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -75,7 +109,7 @@ onMounted(async () => {
       </div>
     </section>
 
-    <div class="container grid grid-cols-4 gap-6 2xl:grid-cols-4 my-6">
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-6 2xl:grid-cols-4 mt-6 mb-12">
       <nuxt-link :to="'/destinations/'+destination.url" class="relative group" v-for="destination in listPackages">
         <div class="overflow-hidden relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -181,35 +215,7 @@ onMounted(async () => {
 <!--    </div>-->
 <!--  </section>-->
 
-    <section class="bg-secondary bg-opacity-10 mt-12 py-6">
-      <div class="container grid grid-cols-4 gap-6">
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-personalize-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">Fully Customizable</h3>
-          <!--          <p class="font-light">for world famous ancient ruins and fascinating insights into the Incan Empire</p>-->
-        </div>
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-services-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">Personalized service</h3>
-          <!--          <p class="font-light">made from fresh fish and marinated in lime juice is just one of Peru's many gourmet delights</p>-->
-        </div>
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-hotels-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">Handpicked hotels</h3>
-          <!--          <p class="font-light">biking, horse riding and ancient ruins in the Sacred Valley</p>-->
-        </div>
-        <div class="text-center">
-          <nuxt-img src="https://www.peruforless.com/images/i-testimonials-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-          <h3 class="font-semibold">5000 + testimonials</h3>
-          <!--          <p class="font-light">for luxury cruises, secluded lodge retreats, canopy walkways and plenty of incredible wildlife</p>-->
-        </div>
-        <!--        <div class="text-center">-->
-        <!--          <nuxt-img src="https://www.jacadatravel.com/wp-content/uploads/fly-images/374671/Boat@2x-128x128.png" class="mx-auto w-16 mb-2"></nuxt-img>-->
-        <!--          <h3 class="font-semibold">Northern Beaches</h3>-->
-        <!--          <p class="font-light">for relaxation and sunset cruises on Peru's rugged coastline</p>-->
-        <!--        </div>-->
-      </div>
-    </section>
+    <IconPackage></IconPackage>
 
 
 

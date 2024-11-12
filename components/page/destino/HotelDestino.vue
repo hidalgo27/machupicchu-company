@@ -1,7 +1,7 @@
 <template>
   <section class="">
     <div class="grid grid-cols-12">
-      <div class="col-span-5 overflow-hidden h-[700px] 2xl:h-[900px]">
+      <div class="col-span-12 md:col-span-5 overflow-hidden h-[700px] 2xl:h-[900px]">
 <!--        <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/slider/1709049548333Slider%20copia%203%20cusco_1709049549.jpg" class="parallax-image h-[900px] 2xl:h-[1200px] object-cover object-center w-full"></nuxt-img>-->
 
 
@@ -15,7 +15,7 @@
 
             <div class="relative w-full h-full">
               <img :src="hotel.imagen" alt="" class="parallax-image object-cover h-[870px] 2xl:h-[1200px] object-center w-full">
-              <div class="absolute inset-0 z-20 grid items-center p-32 ">
+              <div class="absolute inset-0 z-20 grid items-center md:p-32 ">
                 <div class="backdrop-blur-lg bg-white/30 p-12 rounded-lg">
                   <div class="">
                     <h3 class="pb-6 font-semibold">{{hotel.nombre}}</h3>
@@ -41,7 +41,7 @@
           </slide>
         </carousel>
       </div>
-      <div class="col-span-7 grid items-center text-white bg-primary p-24">
+      <div class="col-span-12 md:col-span-7 grid items-center text-white bg-primary p-6 md:p-24">
         <div class="">
           <div class="border-title-sm mb-2"></div>
           <h2 class="text-3xl font-semibold mb-6">HOTELS</h2>
@@ -50,7 +50,7 @@
 <!--          <button class="btn-secondary mt-6">Get Started</button>-->
 
 
-          <div class="flex mt-12 gap-6">
+          <div class="flex flex-wrap mt-12 gap-6">
             <template v-for="(destino, index) in destinos" :key="destino.id">
               <template v-if="destino.hoteles && destino.hoteles.length > 0">
                 <button class="relative " @click="selectedDestino = destino" :class="[ selectedDestino?.id === destino.id ? 'font-semibold text-secondary' : '']">

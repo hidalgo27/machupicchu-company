@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {useHotelStore} from "~/stores/hotel";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import IconPackage from "~/components/page/package/IconPackage.vue";
 const { $gsap } = useNuxtApp()
 
 const listHotel = ref([])
@@ -54,37 +55,9 @@ onMounted(async () => {
     </div>
   </header>
 
-  <section class="bg-secondary bg-opacity-10 py-6">
-    <div class="container grid grid-cols-4 gap-6">
-      <div class="text-center">
-        <nuxt-img src="https://www.peruforless.com/images/i-personalize-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-        <h3 class="font-semibold">Fully Customizable</h3>
-        <!--          <p class="font-light">for world famous ancient ruins and fascinating insights into the Incan Empire</p>-->
-      </div>
-      <div class="text-center">
-        <nuxt-img src="https://www.peruforless.com/images/i-services-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-        <h3 class="font-semibold">Personalized service</h3>
-        <!--          <p class="font-light">made from fresh fish and marinated in lime juice is just one of Peru's many gourmet delights</p>-->
-      </div>
-      <div class="text-center">
-        <nuxt-img src="https://www.peruforless.com/images/i-hotels-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-        <h3 class="font-semibold">Handpicked hotels</h3>
-        <!--          <p class="font-light">biking, horse riding and ancient ruins in the Sacred Valley</p>-->
-      </div>
-      <div class="text-center">
-        <nuxt-img src="https://www.peruforless.com/images/i-testimonials-c.svg" class="mx-auto w-16 mb-2"></nuxt-img>
-        <h3 class="font-semibold">5000 + testimonials</h3>
-        <!--          <p class="font-light">for luxury cruises, secluded lodge retreats, canopy walkways and plenty of incredible wildlife</p>-->
-      </div>
-      <!--        <div class="text-center">-->
-      <!--          <nuxt-img src="https://www.jacadatravel.com/wp-content/uploads/fly-images/374671/Boat@2x-128x128.png" class="mx-auto w-16 mb-2"></nuxt-img>-->
-      <!--          <h3 class="font-semibold">Northern Beaches</h3>-->
-      <!--          <p class="font-light">for relaxation and sunset cruises on Peru's rugged coastline</p>-->
-      <!--        </div>-->
-    </div>
-  </section>
+  <IconPackage></IconPackage>
 
-  <section class="container mt-32">
+  <section class="container hidden md:block mt-32">
     <div class="grid grid-cols-12 gap-6 items-center">
       <div class="col-span-4 text-primary">
         <div class="border-title mb-2"></div>

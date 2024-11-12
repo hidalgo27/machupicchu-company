@@ -10,16 +10,18 @@
 .font-lora{
     font-family: Lora, serif;
 }
-.vimeo-wrapper iframe {
-    width: 100vw;
-    height: 56.25vw;
-    min-height: 100vh;
-    min-width: 177.77vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+/*.vimeo-wrapper iframe {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 50%;*/
+/*    width: 110vw;*/
+/*    height: 56.25vw; !* Proporción 16:9 *!*/
+/*    min-width: 100%;*/
+/*    min-height: 100%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    object-fit: cover; !* Asegura que el video cubra completamente el contenedor *!*/
+/*}*/
+
 .menu-list {
     @apply
     py-5
@@ -146,6 +148,25 @@
     /*background: rgb(255,255,255);*/
     /*background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(43, 23, 8, 0.6) 100%);*/
 }
+.gradient-cicle-gray{
+    background: rgb(255,255,255);
+    background: radial-gradient(circle, rgba(255,255,255,0) -50%, rgba(0, 0, 0, 0.3) 90%);
+    /*background: rgba(43, 23, 8, 0.4);*/
+    /*background: rgb(255,255,255);*/
+    /*background: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(43, 23, 8, 0.6) 100%);*/
+}
 .hotel-img.active{
     @apply border-tertiary border-4 shadow-lg text-black  grayscale-0;
+}
+.vimeo-wrapper iframe {
+    width: 110vw;
+    height: 61vw;
+    min-height: 110vh;
+    min-width: 180vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*@apply object-none object-center h-[100vh] 2xl:h-[90vh]*/
+    /*@apply object-fill h-[100vh] 2xl:h-[90vh]*/
 }
