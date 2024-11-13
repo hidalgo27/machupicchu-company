@@ -375,6 +375,8 @@ import {Notification, NotificationGroup, notify} from "notiwind";
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
 import moment from "moment";
 
+const { $device } = useNuxtApp()
+
 const formStore = useFormStore()
 const ipStore = useIpStore()
 
@@ -436,6 +438,15 @@ const saveInquire = async (obj:any) => {
   await formStore.saveInquire(obj)
 }
 
+function getBrowserName() {
+  if ($device.isChrome) return 'Chrome'
+  if ($device.isSafari) return 'Safari'
+  if ($device.isFirefox) return 'Firefox'
+  if ($device.isEdge) return 'Edge'
+  if ($device.isSamsung) return 'Samsung Browser'
+  return 'Unknown'
+}
+
 const handleSubmit = async () => {
 
   $v.value.$validate();
@@ -462,7 +473,10 @@ const handleSubmit = async () => {
 
       country: geoIp.value.country+" "+geoIp.value.country_calling_code,
 
-      producto: "machupicchu.company"
+      producto: "machupicchu.company",
+      device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
+      browser: getBrowserName(),
+      origen: "Web"
     }
 
     // dataLayer.push({

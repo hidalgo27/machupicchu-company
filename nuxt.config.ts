@@ -31,7 +31,7 @@ export default defineNuxtConfig({
   },
 
   modules: [// needed
-  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@hypernym/nuxt-gsap', '@nuxt/scripts'],
+  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@hypernym/nuxt-gsap', '@nuxt/scripts', '@nuxtjs/device'],
   // gsap: {
   //   composables: true,
   //   provide: false,
@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     apiSecret: '',
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || "https://api.machupicchu.company/api",
-      apiInquire: process.env.NUXT_PUBLIC_API_INQUIRE || "https://api.gotoecuador.com/api/store/inquire",
+      apiInquire: process.env.useNuxtApp || "https://api.gotoecuador.com/api/store/inquire",
       // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
       apiBaseTest: '',
       gtmContainerId: process.env.NUXT_PUBLIC_GTM_CONTAINER_ID || '',

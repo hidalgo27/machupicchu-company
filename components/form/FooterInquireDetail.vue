@@ -6,6 +6,7 @@ import {Notification, NotificationGroup, notify} from "notiwind";
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
 import {useFormStore} from "~/stores/form";
 import moment from "moment/moment";
+const { $device } = useNuxtApp()
 
 const formStore = useFormStore()
 // const formStore = usePackageStore()
@@ -56,6 +57,15 @@ const saveInquire = async (obj:any) => {
   await formStore.saveInquire(obj)
 }
 
+function getBrowserName() {
+  if ($device.isChrome) return 'Chrome'
+  if ($device.isSafari) return 'Safari'
+  if ($device.isFirefox) return 'Firefox'
+  if ($device.isEdge) return 'Edge'
+  if ($device.isSamsung) return 'Samsung Browser'
+  return 'Unknown'
+}
+
 const handleSubmit = async () => {
 
   $v.value.$validate();
@@ -84,21 +94,24 @@ const handleSubmit = async () => {
 
       country: geoIp.value.country+" "+geoIp.value.country_calling_code,
 
-      producto: "machupicchu.company"
+      producto: "machupicchu.company",
+      device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
+      browser: getBrowserName(),
+      origen: "Web"
     }
 
-    dataLayer.push({
-      user_properties: {
-        "user_id": {"value":  crypto.randomUUID()},
-        'email': {"value":  userEmail.value},
-        'full_name': {"value":  fullName.value},
-        'tentative_date': {"value":  formStore.travelDate},
-      },
-      'event': 'generate_lead',
-      'Package': formStore.titlePackages,
-      'HotelCategory':  hotel.value,
-      'NumberTravelers': traveller.value,
-    });
+    // dataLayer.push({
+    //   user_properties: {
+    //     "user_id": {"value":  crypto.randomUUID()},
+    //     'email': {"value":  userEmail.value},
+    //     'full_name': {"value":  fullName.value},
+    //     'tentative_date': {"value":  formStore.travelDate},
+    //   },
+    //   'event': 'generate_lead',
+    //   'Package': formStore.titlePackages,
+    //   'HotelCategory':  hotel.value,
+    //   'NumberTravelers': traveller.value,
+    // });
 
     const res:any = await formStore.getInquire(obj).then((res) => {
       if (res){
