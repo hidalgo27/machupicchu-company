@@ -61,8 +61,8 @@ onMounted(async () => {
     <div class="grid grid-cols-12 gap-6 items-center">
       <div class="col-span-4 text-primary">
         <div class="border-title mb-2"></div>
-        <h2 class="text-3xl font-semibold mb-6">Luxury <br> Accommodation <br> in Peru</h2>
-        <p class="tracking-widest">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aliquam culpa debitis dignissimos distinctio dolorem eligendi eum fugit necessitatibus nisi omnis ratione repellendus, saepe sequi! Explicabo itaque sed tempore.</p>
+        <h2 class="text-3xl font-semibold mb-6">Best boutique and <br> luxury hotels in Peru·</h2>
+        <p class="tracking-widest">Machu Picchu Company works with the most exclusive and luxurious hotels in each city you visit on your trip to Peru. Whether you are in the majestic citadel of Machu Picchu, on the shores of Lake Titicaca, or in the Amazon Rainforest, the accommodations we provide to all our travelers are the most luxurious and comfortable you will find in the area. Visit each destination with the confidence of having a dream stay.</p>
 
       </div>
       <div class="col-span-8">

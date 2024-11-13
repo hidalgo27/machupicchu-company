@@ -5,6 +5,7 @@ import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
 import {useFormStore} from "~/stores/form";
+import moment from "moment/moment";
 
 const formStore = useFormStore()
 // const formStore = usePackageStore()
@@ -51,6 +52,10 @@ const rules = {
 
 const $v = useVuelidate(rules, { fullName, phone, userEmail});
 
+const saveInquire = async (obj:any) => {
+  await formStore.saveInquire(obj)
+}
+
 const handleSubmit = async () => {
 
   $v.value.$validate();
@@ -65,18 +70,21 @@ const handleSubmit = async () => {
 
     let obj = {
       el_package: formStore.titlePackages,
+      package: formStore.titlePackages,
       category_d: hotel.value,
-      destino_d: '',
+      // destino_d: '',
       pasajeros_d: traveller.value,
       // duracion_d: this.duracionSeleccionadosForm,
 
       el_nombre: fullName.value,
       el_email: userEmail.value,
-      el_fecha: formStore.travelDate,
+      el_fecha: formStore.travelDate ? moment(formStore.travelDate).format('YYYY-MM-DD') : null,
       el_telefono: phone.value,
       el_textarea: comment.value,
 
-      country: geoIp.value.country+" "+geoIp.value.country_calling_code
+      country: geoIp.value.country+" "+geoIp.value.country_calling_code,
+
+      producto: "machupicchu.company"
     }
 
     dataLayer.push({
@@ -94,6 +102,7 @@ const handleSubmit = async () => {
 
     const res:any = await formStore.getInquire(obj).then((res) => {
       if (res){
+        saveInquire(obj)
         showLoader.value = false
 
         formStore.travelDate = []
@@ -207,7 +216,7 @@ onMounted(async () => {
           initialCountry: "auto",
           // @ts-ignore
           geoIpLookup: function(callback) {
-            fetch("https://ipapi.co/json")
+            fetch("https://ipapi.co/json/?key=NgKiSgq0Re9Agc6U6mnuP9601tOdj5a5iMh6tjKcRUwzJQEE4H")
                 .then(function(res) { return res.json(); })
                 .then(function(data) { callback(data.country_code); })
                 .catch(function() { callback("us"); });
@@ -442,7 +451,7 @@ onMounted(async () => {
 
                 </div>
 
-                <div class="flex justify-center mt-12">
+                <div class="flex justify-center mt-12 relative z-20">
                   <button type="submit" class="btn-primary" v-show="showLoader == false">Send</button>
                   <button type="button" class="btn-disabled w-full justify-center flex" disabled v-show="showLoader == true">
                     <svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">

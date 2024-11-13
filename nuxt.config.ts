@@ -24,7 +24,8 @@ export default defineNuxtConfig({
       meta: [
         { name: 'msapplication-TileColor', content: '#ffffff' },
         { name: 'msapplication-TileImage', content: '/favicon/ms-icon-144x144.png' },
-        { name: 'theme-color', content: '#ffffff' }
+        { name: 'theme-color', content: '#ffffff' },
+
       ]
     }
   },
@@ -64,7 +65,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
     public: {
-      apiBase: '' || "https://api.machupicchu.company/api",
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || "https://api.machupicchu.company/api",
+      apiInquire: process.env.NUXT_PUBLIC_API_INQUIRE || "https://api.gotoecuador.com/api/store/inquire",
       // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
       apiBaseTest: '',
       gtmContainerId: process.env.NUXT_PUBLIC_GTM_CONTAINER_ID || '',

@@ -29,7 +29,7 @@ let player: any
 onMounted(async () => {
   onLoaded(({ Vimeo }) => {
     player = new Vimeo.Player(video.value, {
-      id: 1028176645,
+      id: 1028540009,
       autoplay: true,
       // background: true,
       // transparent: true,
@@ -157,7 +157,7 @@ onMounted(async () => {
 
   <PopularPackages :listPackages="listPackages"></PopularPackages>
   <div class="container mt-6 text-right">
-    <button class="btn-primary-outline">View more</button>
+    <nuxt-link to="/peru-travel-packages" class="btn-primary-outline">View more</nuxt-link>
   </div>
 
 
@@ -168,13 +168,13 @@ onMounted(async () => {
         <h2 class="text-3xl font-semibold mb-6">Best boutique <br> and luxury hotels in Peru ·</h2>
         <p class="tracking-widest">Machu Picchu Company works with the most exclusive and luxurious hotels in each city you visit on your trip to Peru. Whether you are in the majestic citadel of Machu Picchu, on the shores of Lake Titicaca, or in the Amazon Rainforest, the accommodations we provide to all our travelers are the most luxurious and comfortable you will find in the area. Visit each destination with the confidence of having a dream stay.</p>
         <div class="mt-12">
-          <button class="btn-secondary-outline">View more</button>
+          <nuxt-link to="/hotels" class="btn-secondary-outline">View more</nuxt-link>
         </div>
       </div>
       <div class="col-span-12 md:col-span-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
 
-            <nuxt-link to="/destinations/peru/accommodation" class="relative group overflow-hidden">
+            <nuxt-link to="#" class="relative group overflow-hidden">
               <div class="overflow-hidden relative">
               <nuxt-img src="/images/hotels/1.jpg" class="object-cover h-[550px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
                 <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -185,7 +185,7 @@ onMounted(async () => {
                 <p class="text-sm font-light">Combining intimate, modern hospitality with stylish, historical elegance, Hotel B offers both a polished and d... </p>
               </div>
             </nuxt-link>
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group overflow-hidden">
+          <nuxt-link to="#" class="relative group overflow-hidden">
               <div class="overflow-hidden relative">
                 <nuxt-img src="/images/hotels/2.jpg" class="object-cover h-[550px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
                 <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -205,7 +205,7 @@ onMounted(async () => {
 
       <div class="col-span-12">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+          <nuxt-link to="#" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
             <div class="overflow-hidden relative">
               <nuxt-img src="/images/hotels/3.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover object-center"></nuxt-img>
               <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -218,7 +218,7 @@ onMounted(async () => {
             </div>
           </nuxt-link>
 
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+          <nuxt-link to="#" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
             <div class="overflow-hidden relative">
               <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full  h-[450px] 2xl:h-[550px] object-cover"></nuxt-img>
               <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -230,7 +230,7 @@ onMounted(async () => {
               <p class="text-sm font-light">The hotel consists of several whitewashed cottages in an Andean village located in the heart of Aguas Calientes, p... </p>
             </div>
           </nuxt-link>
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+          <nuxt-link to="#" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
             <div class="overflow-hidden relative">
               <nuxt-img src="/images/hotels/4.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover"></nuxt-img>
               <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
@@ -251,13 +251,13 @@ onMounted(async () => {
 
   <section class="container my-32">
     <div class="grid grid-cols-12 gap-6 items-center">
-      <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[1000px] group hidden md:block">
+      <nuxt-link to="/destinations/machu-picchu" class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[1000px] group hidden md:block">
         <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada gotoperu machupicchu_1708964115.jpg"  class="parallax-image absolute top-0 left-0 w-full h-auto"></nuxt-img>
         <div class="absolute bottom-0 left-0 m-6 z-20 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
           Machu Picchu
         </div>
         <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
-      </div>
+      </nuxt-link>
 <!--      <div class="col-span-8 relative">-->
 <!--        <div class="relative group">-->
 <!--          <div class="overflow-hidden">-->
@@ -276,7 +276,7 @@ onMounted(async () => {
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
-      <div class="relative group">
+      <nuxt-link to="/destinations/lima" class="relative group">
         <div class="overflow-hidden relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
           <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964376528portada gotoperu lima_1708964377.jpg" class="object-cover  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
@@ -285,9 +285,9 @@ onMounted(async () => {
         <div class="absolute bottom-0 left-0 m-6 z-10 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
           Lima
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="relative group">
+      <nuxt-link to="/destinations/cusco" class="relative group">
         <div class="overflow-hidden relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
           <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708963976885portada gotoperu cusco 2_1708963977.jpg" class="object-cover  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
@@ -295,9 +295,9 @@ onMounted(async () => {
         <div class="absolute bottom-0 left-0 m-6 z-10 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
           Cusco
         </div>
-      </div>
+      </nuxt-link>
 
-      <div class="relative group">
+      <nuxt-link to="/destinations/puno" class="relative group">
         <div class="overflow-hidden relative">
           <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
           <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964505112portada gotoperu titicaca lake_1708964505.jpg" class="object-cover  w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
@@ -305,11 +305,11 @@ onMounted(async () => {
         <div class="absolute bottom-0 left-0 m-6 z-10 group-hover:bg-secondary backdrop-blur-sm bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
           Puno
         </div>
-      </div>
+      </nuxt-link>
 
     </div>
     <div class="text-right">
-      <button class="btn-secondary-outline">View more</button>
+      <nuxt-link to="/destinations" class="btn-secondary-outline">View more</nuxt-link>
     </div>
   </section>
 
@@ -489,13 +489,13 @@ onMounted(async () => {
         <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
         <nuxt-img src="/images/home/footer-maja.jpg" class="parallax-image h-[800px] 2xl:h-[1400px] object-cover"></nuxt-img>
       </div>
-      <div class="col-span-12 md:col-span-7 grid items-center text-white bg-primary p-6 md:p-24">
+      <div class="col-span-12 md:col-span-7 grid items-center text-white bg-primary p-12 md:p-24">
         <div class="">
           <div class="border-title-sm mb-2"></div>
           <h2 class="text-3xl font-semibold mb-6">Travel with us </h2>
           <p class=" tracking-widest font-light block mb-8 md:w-1/2">Luxury travel programs have never been so enjoyable until now! Nowadays, travelers are looking for maximum comfort in their vacations, but they are also looking to explore the region in a local way and get to know the cultures of each country up close. So Machu Picchu Company has developed a series of customized tours that compose the perfect travel program for you and your family. </p>
 
-          <nuxt-link to="form-dream-adventure" class="btn-secondary mt-6">Get Started</nuxt-link>
+          <nuxt-link to="#form-dream-adventure" class="btn-secondary mt-6">Get Started</nuxt-link>
         </div>
       </div>
     </div>

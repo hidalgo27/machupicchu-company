@@ -26,7 +26,7 @@
     <div class="bg-tertiary p-12 grid grid-cols-3">
       <div class="col-span-2">
         <h2 class="font-bold text-white text-2xl">OUR VALUES: </h2>
-        <p class="text-sm italic  font-medium my-4">“At GOTOECUADOR, we are guided by a set of core values — quality, passion, trust and personal service : and we guarantee that these hallmarks will be met every day during your vacation in Ecuador".</p>
+        <p class="text-sm italic  font-medium my-4">“At MACHUPICCHU COMPANY, we are guided by a set of core values — quality, passion, trust and personal service : and we guarantee that these hallmarks will be met every day during your vacation in Ecuador".</p>
         <p class="my-4 text-sm font-bold ">I will be always one click of distance for you : martin@gotoperu.com</p>
         <p class="font-bold text-white">Martin Catano</p>
         <p class="text-xs">CEO & Founder</p>
@@ -39,7 +39,7 @@
       </div>
       <div class="">
         <h3 class="font-bold text-white mb-2">Confidence</h3>
-        <p class="text-sm text-gray-300">GOTOECUADOR is certified by the Ecuatorian Government, by the Ministry of Foreign Trade and Tourism of Ecuador. In addition we are also highly rated on Tripadvisor, Trustpilot and diverse well known travel forums.</p>
+        <p class="text-sm text-gray-300">MACHUPICCHU COMPANY is certified by the Ecuatorian Government, by the Ministry of Foreign Trade and Tourism of Ecuador. In addition we are also highly rated on Tripadvisor, Trustpilot and diverse well known travel forums.</p>
       </div>
       <div class="md:col-span-2">
         <h3 class="font-bold text-white mb-2">Commitment</h3>
@@ -57,7 +57,7 @@
   </section>
 
   <section class="container mt-12">
-<!--    <h2 class="text-center font-bold text-gray-500 md:text-2xl mb-12 xl:text-4xl ">WHY CHOOSE GOTOECUADOR</h2>-->
+<!--    <h2 class="text-center font-bold text-gray-500 md:text-2xl mb-12 xl:text-4xl ">WHY CHOOSE MACHUPICCHU COMPANY</h2>-->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-center">
       <div class="border p-6">
         <div class="text-center mb-4">
@@ -70,7 +70,7 @@
           BOOK WITH CONFIDENCE
         </div>
         <p class="text-gray-500 text-sm">
-          Plan your trip risk-free with GOTOECUADOR , enjoying flexible terms and peace of mind. Our deposits start as low as 20% . Terms & conditions apply.
+          Plan your trip risk-free with MACHUPICCHU COMPANY , enjoying flexible terms and peace of mind. Our deposits start as low as 20% . Terms & conditions apply.
         </p>
       </div>
 
@@ -94,7 +94,7 @@
           TRUSTED LOCAL ECUADOR EXPERTS
         </div>
         <p class="text-gray-500 text-sm">
-          GOTOECUADOR was established in 2010 and has been creating unforgettable tours in Ecuador ever since. Our travel consultants have extensive knowledge of our country as they are based in all destinations we operate and will use their expertise to craft your perfect trip to MachuPicchu. They will support you every step of the way, including authentic local 24/7 assistance.
+          MACHUPICCHU COMPANY was established in 2010 and has been creating unforgettable tours in Ecuador ever since. Our travel consultants have extensive knowledge of our country as they are based in all destinations we operate and will use their expertise to craft your perfect trip to MachuPicchu. They will support you every step of the way, including authentic local 24/7 assistance.
         </p>
       </div>
 
@@ -110,7 +110,7 @@
           GREAT TESTIMONIALS
         </div>
         <p class="text-gray-500 text-sm">
-          GOTOECUADOR is committed to the best service, and this is reflected year after year when Tripadvisor awards us with their Certificate of Excellence. In addition we take pride of our customer feedback: 97% of our travellers say they would recommend us to family and friends.
+          MACHUPICCHU COMPANY is committed to the best service, and this is reflected year after year when Tripadvisor awards us with their Certificate of Excellence. In addition we take pride of our customer feedback: 97% of our travellers say they would recommend us to family and friends.
         </p>
       </div>
       <div class="border ">
@@ -130,7 +130,7 @@
           STRESS-FREE EXPERIENCE
         </div>
         <p class="text-gray-500 text-sm">
-          We handle all the details of planning an unforgettable vacation to Ecuador. We take care of organising everything for you, our agent will be there since your arrival and at every point of service, so you save time and effort. You can look forward and enjoy your Ecuador trip knowing that GOTOECUADOR have everything in hand.
+          We handle all the details of planning an unforgettable vacation to Ecuador. We take care of organising everything for you, our agent will be there since your arrival and at every point of service, so you save time and effort. You can look forward and enjoy your Ecuador trip knowing that MACHUPICCHU COMPANY have everything in hand.
         </p>
       </div>
 
@@ -166,7 +166,7 @@
           HANDPICKED HOTELS
         </div>
         <p class="text-gray-500 text-sm">
-          Our GOTOECUADOR representatives personally handpick every hotel included in your itinerary, ensuring that each one meets our high standards when it comes to service, quality, location and character. Having a comfortable and friendly place to rest after a day of exploring is super important and part of your Ecuatorian experiences.
+          Our MACHUPICCHU COMPANY representatives personally handpick every hotel included in your itinerary, ensuring that each one meets our high standards when it comes to service, quality, location and character. Having a comfortable and friendly place to rest after a day of exploring is super important and part of your Ecuatorian experiences.
         </p>
       </div>
 

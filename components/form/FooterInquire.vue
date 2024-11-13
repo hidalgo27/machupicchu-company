@@ -292,7 +292,7 @@
 
             </div>
 
-            <div class="flex justify-center mt-6">
+            <div class="flex justify-center mt-6 relative z-20">
               <button type="submit" class="btn-primary" v-show="showLoader == false">Send</button>
               <button type="button" class="btn-disabled w-full justify-center flex" disabled v-show="showLoader == true">
                 <svg class="animate-spin h-5 w-5 mr-3" viewBox="0 0 24 24">
@@ -373,6 +373,7 @@ import {useVuelidate} from "@vuelidate/core";
 import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
+import moment from "moment";
 
 const formStore = useFormStore()
 const ipStore = useIpStore()
@@ -431,6 +432,9 @@ const onClickSomething = () => {
   showModalProcess.value = false
 }
 
+const saveInquire = async (obj:any) => {
+  await formStore.saveInquire(obj)
+}
 
 const handleSubmit = async () => {
 
@@ -452,11 +456,13 @@ const handleSubmit = async () => {
 
       el_nombre: fullName.value,
       el_email: userEmail.value,
-      el_fecha: formStore.travelDate,
+      el_fecha: formStore.travelDate ? moment(formStore.travelDate).format('YYYY-MM-DD') : null,
       el_telefono: phone.value,
       el_textarea: comment.value,
 
-      country: geoIp.value.country+" "+geoIp.value.country_calling_code
+      country: geoIp.value.country+" "+geoIp.value.country_calling_code,
+
+      producto: "machupicchu.company"
     }
 
     dataLayer.push({
@@ -476,6 +482,7 @@ const handleSubmit = async () => {
     await formStore.getInquire(obj).then((res) => {
       try {
         if (res){
+          saveInquire(obj)
           showLoader.value = false
 
           formStore.travelDate = []
@@ -580,7 +587,7 @@ onMounted(async () => {
           initialCountry: "auto",
           // @ts-ignore
           geoIpLookup: function(callback) {
-            fetch("https://ipapi.co/json")
+            fetch("https://ipapi.co/json?key=NgKiSgq0Re9Agc6U6mnuP9601tOdj5a5iMh6tjKcRUwzJQEE4H")
                 .then(function(res) { return res.json(); })
                 .then(function(data) { callback(data.country_code); })
                 .catch(function() { callback("us"); });

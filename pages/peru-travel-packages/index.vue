@@ -118,19 +118,23 @@ onMounted(async () => {
           </div>
         </div>
 
-        <div class="col-span-12 md:col-span-7 bg-amber-300  relative items-end grid parallax-container  overflow-hidden h-[700px] 2xl:h-[1000px]">
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image  h-[920px] 2xl:h-[1300px] absolute inset-0 object-cover w-full"></nuxt-img>
+        <div class="col-span-12 md:col-span-7 bg-amber-300">
+          <nuxt-link to="/peru-travel-packages/ultimate-sacred-valley-and-machu-picchu">
+            <div class="relative items-end grid parallax-container  overflow-hidden h-[700px] 2xl:h-[1000px]">
+              <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image  h-[920px] 2xl:h-[1300px] absolute inset-0 object-cover w-full"></nuxt-img>
 
-          <div class="p-6 m-6 bg-white 2xl:w-1/2 w-3/5 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
-            <div class="border-title mb-2 "></div>
-            <h2 class="text-xl">Tralvel</h2>
-            <p class="my-3 text-sm font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem eaque incidunt labore obcaecati odio vel.</p>
-            <!--          <p class="text-secondary">From $1234 usd</p>-->
-            <div class="text-secondary">
-              $1233 usd
+              <div class="p-6 m-6 bg-white 2xl:w-1/2 w-3/5 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
+                <div class="border-title mb-2 "></div>
+                <h2 class="text-xl">Sacred Valley and Machu Picchu Ultimate Program</h2>
+                <p class="my-3 text-sm font-light">7 days</p>
+                <!--          <p class="text-secondary">From $1234 usd</p>-->
+<!--                <div class="text-secondary">-->
+<!--                  $1233 usd-->
+<!--                </div>-->
+              </div>
+
             </div>
-          </div>
-
+          </nuxt-link>
         </div>
       </div>
     </section>

@@ -450,7 +450,7 @@ onMounted(async () => {
 
 <!--            <p class=" tracking-widest font-light 2xl:w-1/2 mt-3">Get a travel expert to plan your dream vacation</p>-->
 
-            <div class="flex gap-6 my-6 overflow-x-scroll text-secondary focus:touch-pan-x items-center">
+            <div class="flex gap-6 my-6  text-secondary  items-center">
               <a href="#overview"  class="text-sm py-2 px-3 bg-slate-100 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Overview</a>
               <a href="#itinerary" class="text-sm py-2 px-3 bg-slate-100 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary" >Itinerary</a>
               <a href="#included" class="text-sm py-2 px-3 bg-slate-100 font-medium rounded-full focus:bg-[#D6DD85] focus:text-primary">Included</a>
@@ -632,7 +632,7 @@ onMounted(async () => {
                   <span class="text-base text-secondary block mb-2">{{ packages.duracion }} days</span>
                   <div class="border-title-sm mb-2 "></div>
                   <h2 class="text-2xl mb-3 font-bold text-gray-600"> {{ packages.titulo }}</h2>
-                  <div class="columns-2 gap-2">
+                  <div class="grid grid-cols-2 gap-2">
                     <div class="rounded overflow-hidden relative first-image group">
                       <nuxt-img src="/images/team/angi.jpg" class="h-72 -scale-x-100 object-cover object-center group-hover:shadow w-full"></nuxt-img>
                       <div class="absolute backdrop-blur-lg bottom-0 w-full p-2 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500">
@@ -840,8 +840,8 @@ onMounted(async () => {
         <div class="col-span-12 md:col-span-7 grid items-center text-white bg-primary p-12 md:p-24">
           <div class="">
             <div class="border-title-sm mb-2"></div>
-            <h2 class="text-3xl font-semibold mb-6">Lorem ipsum dolor sit amet</h2>
-            <p class=" tracking-widest font-light md:w-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus ad aliquam culpa debitis dignissimos distinctio dolorem eligendi eum fugit necessitatibus nisi omnis ratione repellendus, saepe sequi! Explicabo itaque sed tempore.</p>
+            <h2 class="text-3xl font-semibold mb-6">Travel with us</h2>
+            <p class=" tracking-widest font-light md:w-1/2">Luxury travel programs have never been so enjoyable until now! Nowadays, travelers are looking for maximum comfort in their vacations, but they are also looking to explore the region in a local way and get to know the cultures of each country up close. So Machu Picchu Company has developed a series of customized tours that compose the perfect travel program for you and your family.</p>
             <div class="mt-12">
               <nuxt-link to="#form-dream-adventure" class="btn-ternary">Get a Quote</nuxt-link>
             </div>

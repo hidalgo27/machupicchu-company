@@ -159,10 +159,10 @@
     @apply border-tertiary border-4 shadow-lg text-black  grayscale-0;
 }
 .vimeo-wrapper iframe {
-    width: 110vw;
+    width: 120vw;
     height: 61vw;
-    min-height: 110vh;
-    min-width: 180vh;
+    min-height: 120vh;
+    min-width: 200vh;
     position: absolute;
     top: 50%;
     left: 50%;

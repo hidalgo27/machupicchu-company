@@ -45,7 +45,7 @@
         <div class="">
           <div class="border-title-sm mb-2"></div>
           <h2 class="text-3xl font-semibold mb-6">HOTELS</h2>
-          <p class=" tracking-widest font-light 2xl:w-1/2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda deserunt dolorem enim est iste magni, non nulla obcaecati veniam voluptates. Atque ducimus eveniet expedita in mollitia nesciunt, quia rem velit.</p>
+          <p class=" tracking-widest font-light 2xl:w-1/2">Machu Picchu Company works with the most exclusive and luxurious hotels in each city you visit on your trip to Peru. Whether you are in the majestic citadel of Machu Picchu, on the shores of Lake Titicaca, or in the Amazon Rainforest, the accommodations we provide to all our travelers are the most luxurious and comfortable you will find in the area. Visit each destination with the confidence of having a dream stay.</p>
 
 <!--          <button class="btn-secondary mt-6">Get Started</button>-->
 

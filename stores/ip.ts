@@ -7,7 +7,7 @@ export const useIpStore = defineStore('IpStore', () => {
 
 		return new Promise(async (resolve, reject) => {
 			try {
-				const res = await fetch("https://ipapi.co/json", {
+				const res = await fetch("https://ipapi.co/json/?key=NgKiSgq0Re9Agc6U6mnuP9601tOdj5a5iMh6tjKcRUwzJQEE4H", {
 					method: 'GET',
 					headers: headers,
 				})

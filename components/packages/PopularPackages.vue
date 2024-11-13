@@ -141,9 +141,10 @@
         </div>
         <div class="p-6 text-primary transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
           <div class="border-title mb-2 "></div>
-          <h2 class="text-xl">{{ packages.titulo }}</h2>
-          <p class="my-3 text-sm font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem eaque incidunt labore obcaecati odio vel.</p>
+          <h2 class="text-xl mb-4">{{ packages.titulo }}</h2>
+<!--          <p class="my-3 text-sm font-light">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem eaque incidunt labore obcaecati odio vel.</p>-->
 <!--          <p class="text-secondary">From $1234 usd</p>-->
+          <div class="border-dashed border-1 border-t my-4"></div>
           <div v-if="packages.is_p_t == 0">
             <div v-if="packages.precio_tours > 0">
               ${{ packages.precio_tours }}<span class="text-sm text-secondary">usd</span>

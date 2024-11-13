@@ -96,15 +96,19 @@ onMounted(async () => {
           <h2 class="text-3xl font-semibold mb-6">Unveil the <br>Wonders of Peru</h2>
           <p class="tracking-widest">Peru is a country with endless tourist destinations to explore. Do not miss the opportunity to travel to the most exclusive beaches of Peru, visit the citadel of Machu Picchu on luxury trains, and explore the Peruvian Amazon with the most luxurious cruises that only Machu Picchu Company can offer to all our exclusive travelers. Make sure you visit all the main tourist destinations in Peru with the comforts and luxuries that our organization provides you.</p>
         </div>
-        <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[900px] group relative">
-          <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
-          <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image h-[920px] 2xl:h-[1200px] object-cover object-center absolute top-0 left-0 w-full"></nuxt-img>
-          <div class="absolute bottom-0 inset-0 items-center grid text-center text-3xl z-10 group-hover:backdrop-blur-sm group-hover:bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
-            Machu Picchu
-            <div class="absolute text-sm bottom-0 w-full p-32 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium assumenda autem culpa delectus dolore, eveniet impedit in iste itaque laborum laudantium nam nesciunt optio pariatur quam repellat tempore voluptas.
+        <div class="col-span-8">
+          <nuxt-link to="/destinations/machu-picchu">
+            <div class="overflow-hidden relative parallax-container h-[920px] 2xl:h-[900px] group">
+              <div class="absolute inset-0 gradient-cicle-beige z-10"></div>
+              <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada%20gotoperu%20machupicchu_1708964115.jpg"  class="parallax-image h-[920px] 2xl:h-[1200px] object-cover object-center absolute top-0 left-0 w-full"></nuxt-img>
+              <div class="absolute bottom-0 inset-0 items-center grid text-center text-3xl z-10 group-hover:backdrop-blur-sm group-hover:bg-primary/40 text-white rounded px-6 py-3 transition duration-500 ease-in-out">
+                Machu Picchu
+                <div class="absolute text-sm bottom-0 w-full p-32 text-white transition-transform transform translate-y-full group-hover:translate-y-0 duration-500">
+                  Travel on the most luxurious trains to the citadel of Machu Picchu! Experience a tour of Inca City with Machu Picchu Company, which offers personalized services that all our travelers need.
+                </div>
+              </div>
             </div>
-          </div>
+          </nuxt-link>
         </div>
       </div>
     </section>
