@@ -465,18 +465,18 @@ const handleSubmit = async () => {
       producto: "machupicchu.company"
     }
 
-    dataLayer.push({
-      user_properties: {
-        "user_id": {"value":  crypto.randomUUID()},
-        'email': {"value":  userEmail.value},
-        'full_name': {"value":  fullName.value},
-        'tentative_date': {"value":  formStore.travelDate},
-      },
-      'event': 'generate_lead',
-      'HotelCategory':  hotel.value,
-      'NumberTravelers': traveller.value,
-      'TripLength': trip_length.value+' day',
-    });
+    // dataLayer.push({
+    //   user_properties: {
+    //     "user_id": {"value":  crypto.randomUUID()},
+    //     'email': {"value":  userEmail.value},
+    //     'full_name': {"value":  fullName.value},
+    //     'tentative_date': {"value":  formStore.travelDate},
+    //   },
+    //   'event': 'generate_lead',
+    //   'HotelCategory':  hotel.value,
+    //   'NumberTravelers': traveller.value,
+    //   'TripLength': trip_length.value+' day',
+    // });
 
 
     await formStore.getInquire(obj).then((res) => {
