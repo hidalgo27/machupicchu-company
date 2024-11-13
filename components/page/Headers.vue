@@ -1,14 +1,14 @@
 <template>
   <div class="">
     <div :class="`shadow ${bgColor} bg-opacity-95 hidden sm:block`">
-      <div class="container flex justify-between py-6 items-center">
+      <div class="p-12 flex justify-between py-5 items-center">
         <div class="flex items-center gap-4">
           <nuxt-link to="/">
             <div>
-              <nuxt-img src="/images/logos/logo-mapi.svg" class="w-[150px] md:w-[200px]"></nuxt-img>
+              <nuxt-img src="/images/logos/logo-mapi6.svg" class="h-8"></nuxt-img>
             </div>
           </nuxt-link>
-          <Typing></Typing>
+<!--          <Typing></Typing>-->
         </div>
         <div class="md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6" @click="packageStore.showModalMenu = !packageStore.showModalMenu">
@@ -17,8 +17,11 @@
         </div>
         <!--      <Nav></Nav>-->
         <div class="flex gap-3 items-center">
-          <span class="font-semibold">+1 (202) 4911478</span>
-          <a class="btn-primary-outline" href="#form-dream-adventure">Inquire Now</a>
+          <div class="leading-5 text-right">
+            <span class="font-semibold block">+1 (202) 4911478</span>
+            <span class="text-sm">Or contact your travel advisor</span>
+          </div>
+          <a class="btn-primary-outline" href="#form-dream-adventure">Get a Quote</a>
         </div>
       </div>
     </div>

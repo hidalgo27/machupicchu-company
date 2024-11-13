@@ -82,7 +82,7 @@ onMounted(async () => {
 <template>
 
     <div class="relative w-full h-screen 2xl:h-[120vh] overflow-hidden">
-      <div class="mask gradient-cicle-beige items-center flex justify-center">
+      <div class="mask gradient-cicle-gray items-center flex justify-center">
         <div v-if="loading" class="mt-40 text-center">
 <!--          Cargando ..-->
         </div>
@@ -93,7 +93,7 @@ onMounted(async () => {
 <!--      </video>-->
       <div v-show="!loading" ref="video" loading="lazy" class="vimeo-wrapper"></div>
 
-      <div class="relative z-10 flex items-center 2xl:ml-52 pt-16 2xl:pt-0 md:mt-0  w-full h-full text-left">
+      <div class="relative z-10 flex items-center md:ml-52 2xl:ml-52 pt-36 2xl:pt-0 2xl:pb-40 md:mt-0  w-full h-full text-left">
 <!--        <h2 class="text-white text-xl md:text-3xl container font-medium ">THE BEST VACATION IN <span class="text-primary">PERU</span> <span class="text-secondary">WITH THE BEST</span> PERUVIAN OPERATOR</h2>-->
         <div class=" container ">
 <!--          Explora Perú <br>-->
@@ -103,9 +103,19 @@ onMounted(async () => {
             Luxury <br>
             tours in Peru.</h1>
 
-          <p class="text-white text-xl 2xl:text-2xl tracking-widest font-light mt-8 font-parisienne">Discover Peru and Machu Picchu with an ultimate luxury program.</p>
+          <p class="text-white text-xl 2xl:text-2xl tracking-widest font-light mt-5 font-parisienne">Discover Peru and Machu Picchu with an ultimate luxury program.</p>
 
-          <button class="btn-ternary mt-12">Inquire Now</button>
+<!--          <nuxt-link to="#form-dream-adventure" class="btn-ternary mt-12">Inquire Now</nuxt-link>-->
+
+          <div class="border-dashed border-tertiary border-1 border-t my-8 w-32"></div>
+          <div class="flex items-center gap-2 mt-6 text-white">
+            <div>
+              <nuxt-img src="/images/logos/logo-gotoperu.svg" class="h-4"></nuxt-img>
+            </div>
+            <div class="font-thin text-sm">
+              Luxury division
+            </div>
+          </div>
         </div>
 
 
