@@ -175,6 +175,7 @@ import {usePackageStore} from "~/stores/packages";
 
 const packageStore = usePackageStore()
 
+const { dataLayer } = useScriptGoogleTagManager()
 
 const pack = (packages:string) => {
   console.log(packages)
@@ -217,8 +218,9 @@ const props = defineProps<{
   listPackages: Array<{ url: string, [key: string]: any }>
 }>();
 
+
 const viewGTM = (listPackages: Array<{ url: string, [key: string]: any }>, duration: number) => {
-  console.log(listPackages, duration)
+
   dataLayer.push({
     'event': 'view_item',
     'TravelPackage':  listPackages,

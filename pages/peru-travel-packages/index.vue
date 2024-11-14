@@ -140,7 +140,7 @@ onMounted(async () => {
     </section>
 
 
-    <Wetravel></Wetravel>
+<!--    <Wetravel></Wetravel>-->
 
     <PopularPackages :listPackages="listPackages"></PopularPackages>
 

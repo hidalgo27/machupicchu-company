@@ -374,6 +374,7 @@ import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
 import VueTailwindDatepicker from "vue-tailwind-datepicker";
 import moment from "moment";
+const { dataLayer } = useScriptGoogleTagManager()
 
 const { $device } = useNuxtApp()
 
@@ -479,18 +480,18 @@ const handleSubmit = async () => {
       origen: "Web"
     }
 
-    // dataLayer.push({
-    //   user_properties: {
-    //     "user_id": {"value":  crypto.randomUUID()},
-    //     'email': {"value":  userEmail.value},
-    //     'full_name': {"value":  fullName.value},
-    //     'tentative_date': {"value":  formStore.travelDate},
-    //   },
-    //   'event': 'generate_lead',
-    //   'HotelCategory':  hotel.value,
-    //   'NumberTravelers': traveller.value,
-    //   'TripLength': trip_length.value+' day',
-    // });
+    dataLayer.push({
+      user_properties: {
+        "user_id": {"value":  crypto.randomUUID()},
+        'email': {"value":  userEmail.value},
+        'full_name': {"value":  fullName.value},
+        'tentative_date': {"value":  formStore.travelDate},
+      },
+      'event': 'generate_lead',
+      'HotelCategory':  hotel.value,
+      'NumberTravelers': traveller.value,
+      'TripLength': trip_length.value+' day',
+    });
 
 
     await formStore.getInquire(obj).then((res) => {

@@ -15,11 +15,14 @@
     <div class="absolute  inset-0 w-full h-full">
       <div class="container grid items-center pt-16 h-full">
         <div class="">
-          <div class="border-2 border-white w-8 mb-2"></div>
-          <h1 class="text-white text-opacity-70 leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold">
+          <div class="border-2 border-primary w-8 mb-2"></div>
+          <h1 class="text-primary leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold">
             OUR TEAM</h1>
-
-          <p class="text-white text-xl   tracking-widest font-light mt-5">Unveil the Wonders of a Journey Through History and Nature.</p>
+          <div class="">
+            <h5 class="font-semibold text-opacity-70 mb-3  text-5xl mt-12 text-white">PAUL CATANO</h5>
+            <p class="text-primary">DIRECTOR</p>
+          </div>
+<!--          <p class="text-white text-xl   tracking-widest font-light mt-5">Unveil the Wonders of a Journey Through History and Nature.</p>-->
         </div>
       </div>
     </div>
@@ -28,49 +31,54 @@
 
   <section class="bg-primary py-32 ">
     <div class="container text-primary mb-24">
-      <div class="border-title mb-2"></div>
-      <h1 class="font-semibold text-6xl mb-6 text-white">TRAVEL TEAM</h1>
+      <div class="border-title mb-2">truncate</div>
+      <h1 class="font-semibold text-4xl md:text-6xl mb-6 text-white">TRAVEL TEAM</h1>
     </div>
     <div class="container flex text-white  flex-wrap gap-16">
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4  text-6xl text-white">ALICE DUNNE</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">FIORELLA BEJAR</h5>
+        <p class="text-secondary">SENIOR TRAVEL DESIGNER</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">ALIX CREEL</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">ANGIE VILLAFUERTE</h5>
+        <p class="text-secondary">SENIOR TRAVEL DESIGNER</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">ALYS COLAYERA</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">NELLY GALLEGOS</h5>
+        <p class="text-secondary">RESERVATIONS</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">CHRISTIAN WILLOUGHBY</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">GABY	PUMA</h5>
+        <p class="text-secondary">OPERATIONS</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">CHRISTIE EARDLEY</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">WALDIR	CONDORI</h5>
+        <p class="text-secondary">QUALITY AREA</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">ALICE DUNNE</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">EDSON VILLACORTA</h5>
+        <p class="text-secondary">GUEST RELATIONS</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">ALIX CREEL</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">ALVARO VILLANUEVA</h5>
+        <p class="text-secondary">MARKETING MANAGER</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">ALYS COLAYERA</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">ALAIN GONZALES</h5>
+        <p class="text-secondary">SENIOR GUIDES</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">CHRISTIAN WILLOUGHBY</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">RUBEN MALPARTIDA</h5>
+        <p class="text-secondary">SENIOR GUIDES</p>
       </div>
-      <div class="">
-        <h5 class="font-semibold text-opacity-70 mb-4 text-6xl text-white">CHRISTIE EARDLEY</h5>
-        <p class="text-secondary">CO-OPERATIONS MANAGER</p>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">RONALD	BAEZ</h5>
+        <p class="text-secondary">CUSTOMER SERVICE</p>
+      </div>
+      <div class="truncate">
+        <h5 class="font-semibold text-opacity-70 mb-4 text-4xl md:text-6xl text-white">MARIEL	AVILES</h5>
+        <p class="text-secondary">SOCIAL RESPONSABILITY MANAGER</p>
       </div>
     </div>
   </section>

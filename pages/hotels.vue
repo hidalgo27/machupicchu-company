@@ -68,7 +68,8 @@ onMounted(async () => {
       <div class="col-span-8">
         <div class="grid grid-cols-2 gap-6 items-center">
 
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group">
+<!--          /destinations/peru/accommodation-->
+          <nuxt-link to="#" class="relative group">
             <div class="overflow-hidden">
               <nuxt-img src="/images/hotels/1.jpg" class="object-cover h-[550px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
             </div>
@@ -78,7 +79,7 @@ onMounted(async () => {
               <p class="text-sm font-light">Combining intimate, modern hospitality with stylish, historical elegance, Hotel B offers both a polished and d... </p>
             </div>
           </nuxt-link>
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group">
+          <nuxt-link to="#" class="relative group">
             <div class="overflow-hidden">
               <nuxt-img src="/images/hotels/2.jpg" class="object-cover h-[550px] w-full transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105"></nuxt-img>
             </div>
@@ -97,7 +98,7 @@ onMounted(async () => {
 
       <div class="col-span-12">
         <div class="grid grid-cols-3 gap-6 items-center">
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+          <nuxt-link to="#" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
             <nuxt-img src="/images/hotels/3.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover object-center"></nuxt-img>
             <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-lg text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
               <div class="border-title-sm mb-2"></div>
@@ -106,7 +107,7 @@ onMounted(async () => {
             </div>
           </nuxt-link>
 
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+          <nuxt-link to="#" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
             <nuxt-img src="https://gotoperu.com/images/hotels/banner.webp" class="w-full  h-[450px] 2xl:h-[550px] object-cover"></nuxt-img>
             <div class="absolute w-full bottom-0 left-0  z-10 group-hover:bg-secondary backdrop-blur-lg  text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
               <div class="border-title-sm mb-2"></div>
@@ -114,7 +115,7 @@ onMounted(async () => {
               <p class="text-sm font-light">The hotel consists of several whitewashed cottages in an Andean village located in the heart of Aguas Calientes, p... </p>
             </div>
           </nuxt-link>
-          <nuxt-link to="/destinations/peru/accommodation" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
+          <nuxt-link to="#" class="relative group h-[450px] 2xl:h-[550px] overflow-hidden">
             <nuxt-img src="/images/hotels/4.jpg" class="w-full  h-[450px] 2xl:h-[550px] object-cover"></nuxt-img>
             <div class="absolute bottom-0 left-0 z-10 group-hover:bg-secondary backdrop-blur-lg text-white rounded px-6 py-3 transition duration-500 ease-in-out transform group-hover:-translate-x-0 group-hover:scale-105">
               <div class="border-title-sm mb-2"></div>

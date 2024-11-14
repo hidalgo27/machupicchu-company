@@ -1,6 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -30,12 +29,20 @@ export default defineNuxtConfig({
     }
   },
 
+
   modules: [// needed
   '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@hypernym/nuxt-gsap', '@nuxt/scripts', '@nuxtjs/device'],
   // gsap: {
   //   composables: true,
   //   provide: false,
   // },
+  scripts: {
+    registry: {
+      googleTagManager: {
+        id: 'AW-382248808',
+      }
+    }
+  },
   googleFonts: {
     families: {
       Lato: [100, 300, 400, 700, 900],  // Lato soporta estos pesos
@@ -69,7 +76,7 @@ export default defineNuxtConfig({
       apiInquire: process.env.useNuxtApp || "https://api.gotoecuador.com/api/store/inquire",
       // apiBaseTest: process.env.API_BASE_TEST || "https://app.gotolatam.travel/api",
       apiBaseTest: '',
-      gtmContainerId: process.env.NUXT_PUBLIC_GTM_CONTAINER_ID || '',
+      gtmContainerId: process.env.NUXT_PUBLIC_GTM_CONTAINER_ID || 'GTM-M4FTLKV3',
       // apiBase: process.env.API_BASE_TEST || "http://localhost:8080/api",
     }
   },
