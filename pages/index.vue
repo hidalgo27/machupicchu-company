@@ -99,7 +99,7 @@ onMounted(async () => {
 <!--          Explora Perú <br>-->
           <div class="border-title mb-2"></div>
           <h1 class="text-white/80 drop-shadow-[0_0_1px_rgba(255,255,255,0.5)] leading-tight text-5xl 2xl:text-7xl tracking-wide font-semibold">
-            Trailor-made <br>
+            Tailor-made <br>
             Luxury <br>
             tours in Peru.</h1>
 
