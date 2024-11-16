@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 
 
   modules: [// needed
-  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@hypernym/nuxt-gsap', '@nuxt/scripts', '@nuxtjs/device'],
+  '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', "@nuxt/image", "@nuxtjs/google-fonts", 'floating-vue/nuxt', '@hypernym/nuxt-gsap', '@nuxt/scripts', '@nuxtjs/device', '@samk-dev/nuxt-vcalendar'],
   // gsap: {
   //   composables: true,
   //   provide: false,

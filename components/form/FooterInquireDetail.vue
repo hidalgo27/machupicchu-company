@@ -3,9 +3,9 @@ import {email, required} from "@vuelidate/validators";
 import {useVuelidate} from "@vuelidate/core";
 import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
-import VueTailwindDatepicker from "vue-tailwind-datepicker";
+
 import {useFormStore} from "~/stores/form";
-import moment from "moment/moment";
+import moment from "moment";
 const { dataLayer } = useScriptGoogleTagManager()
 const { $device } = useNuxtApp()
 
@@ -49,10 +49,11 @@ const rules = {
   fullName: { required },
   phone: { required },
   userEmail: { required, email },
+  travelDate: { required },
   // comment: { required },
 };
 
-const $v = useVuelidate(rules, { fullName, phone, userEmail});
+const $v = useVuelidate(rules, { fullName, phone, userEmail, travelDate});
 
 const saveInquire = async (obj:any) => {
   await formStore.saveInquire(obj)
@@ -89,11 +90,12 @@ const handleSubmit = async () => {
 
       el_nombre: fullName.value,
       el_email: userEmail.value,
-      el_fecha: formStore.travelDate ? moment(formStore.travelDate).format('YYYY-MM-DD') : null,
+      el_fecha: travelDate.value ? moment(travelDate.value).format('YYYY-MM-DD HH:mm:ss') : null,
       el_telefono: phone.value,
       el_textarea: comment.value,
 
       country: geoIp.value.country+" "+geoIp.value.country_calling_code,
+      codigo_pais: geoIp.value.country+" "+geoIp.value.country_calling_code,
 
       producto: "machupicchu.company",
       device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
@@ -119,7 +121,7 @@ const handleSubmit = async () => {
         saveInquire(obj)
         showLoader.value = false
 
-        formStore.travelDate = []
+        travelDate.value = []
         traveller.value = ""
         hotel.value = []
         formStore.destination = []
@@ -154,7 +156,7 @@ const handleSubmit = async () => {
       showLoader.value = false
       formStore.showModalItinerary = false
 
-      formStore.travelDate = []
+      travelDate.value = []
       traveller.value = ""
       hotel.value = []
       formStore.destination = []
@@ -383,7 +385,7 @@ onMounted(async () => {
                           id="phoneNumber"
                       />
                       <!--                    <input ref="phoneInputRef" v-model="phone" class="is-input-ico peer" placeholder=" " id="phoneNumber" type="tel" />-->
-                      <label class="input-goto-label text-gray-500" for="phoneNumber">Phone Number</label>
+                      <label class="input-goto-label -top-3 text-gray-500" for="phoneNumber">Phone Number</label>
                       <!--                    <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">-->
                       <!--                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">-->
                       <!--                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0l-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 014.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 00-.38 1.21 12.035 12.035 0 007.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 011.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 01-2.25 2.25h-2.25z" />-->
@@ -407,11 +409,38 @@ onMounted(async () => {
 <!--                          <vue-tailwind-datepicker as-single no-input :formatter="formatter" v-model="formStore.travelDate" @click="onClickSomething()" class="calendar-w"/>-->
 <!--                        </template>-->
 <!--                      </VMenu>-->
-                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>
+<!--                      <div class="bg-white/30 absolute rounded-md inset-0 -z-10"></div>-->
 
-                      <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="formStore.travelDate" input-classes="input-goto peer !pl-3"/>
-                      <label class="absolute cursor-text text-gray-500 top-0 left-2 backdrop-blur-sm rounded-2xl px-1 transition-all duration-200 ease-in-out text-xs" @click="showModalProcess = true">When</label>
+<!--                      <vue-tailwind-datepicker as-single  :formatter="formatter" placeholder="Tentative travel date" :disable-date="disablePastDates" v-model="travelDate" input-classes="input-goto peer !pl-3"/>-->
+<!--                      <label class="absolute cursor-text text-gray-500 top-0 left-2 backdrop-blur-sm rounded-2xl px-1 transition-all duration-200 ease-in-out text-xs" @click="showModalProcess = true">When</label>-->
 
+                      <client-only>
+                        <VDatePicker v-model="travelDate" mode="date">
+                          <template #default="{ togglePopover }">
+                            <button
+                                class="input-goto peer text-left"
+                                @click="togglePopover"
+                            >
+
+                              <!--                        <span v-if="filters.created_start && filters.created_end">{{ filters.created_start+' to '+filters.created_end }}</span>-->
+                              <span v-if="travelDate">{{ moment(travelDate).format('YYYY-MM-DD') }}</span>
+                              <span class="text-gray-500" v-else>Tentative travel date</span>
+                              <span class="absolute cursor-text text-gray-500 -top-3 left-2 backdrop-blur-sm rounded-2xl px-1 transition-all duration-200 ease-in-out text-xs" >Inquire Date</span>
+
+                            </button>
+
+                          </template>
+                        </VDatePicker>
+                      </client-only>
+
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                        </svg>
+
+                      </div>
+
+                      <div v-if="$v.travelDate.$error" class="text-xs text-red-500">Travel date required</div>
 
                     </div>
 
@@ -448,7 +477,7 @@ onMounted(async () => {
                     <textarea
                         type="text"
                         name="search"
-                        class="input-goto peer !min-h-20"
+                        class="input-goto peer !min-h-20 pt-2"
                         placeholder=" "
                         autocomplete="off"
                         v-model="comment"
