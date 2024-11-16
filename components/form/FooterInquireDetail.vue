@@ -13,6 +13,8 @@ const formStore = useFormStore()
 // const formStore = usePackageStore()
 const ipStore = useIpStore()
 
+const today = new Date();
+
 const package_title = ref()
 
 const showLoader = ref(false)
@@ -415,7 +417,7 @@ onMounted(async () => {
 <!--                      <label class="absolute cursor-text text-gray-500 top-0 left-2 backdrop-blur-sm rounded-2xl px-1 transition-all duration-200 ease-in-out text-xs" @click="showModalProcess = true">When</label>-->
 
                       <client-only>
-                        <VDatePicker v-model="travelDate" mode="date">
+                        <VDatePicker v-model="travelDate" mode="date" :min-date="today">
                           <template #default="{ togglePopover }">
                             <button
                                 class="input-goto peer text-left"

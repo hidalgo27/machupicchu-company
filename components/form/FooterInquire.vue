@@ -252,7 +252,7 @@
 <!--                  </client-only>-->
 
                   <client-only>
-                    <VDatePicker v-model="travelDate" mode="date">
+                    <VDatePicker v-model="travelDate" mode="date" :min-date="today">
                       <template #default="{ togglePopover }">
                         <button
                             class="input-goto peer text-left"
@@ -424,7 +424,7 @@ import {Notification, NotificationGroup, notify} from "notiwind";
 import moment from "moment";
 const { dataLayer } = useScriptGoogleTagManager()
 
-const today = new Date().toISOString().split('T')[0];
+const today = new Date();
 const selectedDate = ref('');
 
 
