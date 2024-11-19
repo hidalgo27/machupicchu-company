@@ -421,7 +421,7 @@ import {useVuelidate} from "@vuelidate/core";
 import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
 // import VueTailwindDatepicker from "vue-tailwind-datepicker";
-import moment from "moment";
+import moment from "moment-timezone";
 const { dataLayer } = useScriptGoogleTagManager()
 
 const today = new Date();
@@ -542,7 +542,8 @@ const handleSubmit = async () => {
       producto: "machupicchu.company",
       device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
       browser: getBrowserName(),
-      origen: "Web"
+      origen: "Web",
+      inquire_date: moment().tz('America/Lima').format('YYYY-MM-DD HH:mm:ss')
     }
 
     dataLayer.push({

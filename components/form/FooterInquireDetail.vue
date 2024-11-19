@@ -5,7 +5,7 @@ import {useIpStore} from "~/stores/ip";
 import {Notification, NotificationGroup, notify} from "notiwind";
 
 import {useFormStore} from "~/stores/form";
-import moment from "moment";
+import moment from "moment-timezone";
 const { dataLayer } = useScriptGoogleTagManager()
 const { $device } = useNuxtApp()
 
@@ -102,7 +102,8 @@ const handleSubmit = async () => {
       producto: "machupicchu.company",
       device: $device.isMobile ? 'Mobile' : $device.isTablet ? 'Tablet' : 'Desktop',
       browser: getBrowserName(),
-      origen: "Web"
+      origen: "Web",
+      inquire_date: moment().tz('America/Lima').format('YYYY-MM-DD HH:mm:ss')
     }
 
     dataLayer.push({
