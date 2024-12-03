@@ -170,3 +170,28 @@
     /*@apply object-none object-center h-[100vh] 2xl:h-[90vh]*/
     /*@apply object-fill h-[100vh] 2xl:h-[90vh]*/
 }
+
+.text-tren h3:before{
+    content: "";
+    @apply h-[7vw] w-[7vw] 2xl:h-[8vw] 2xl:w-[8vw];
+    position: absolute;
+    display: block;
+    background: url(/images/icons/quote-left-blue.svg) no-repeat bottom;
+    background-size: contain;
+    mix-blend-mode: multiply;
+    left: 22%;
+    top: 1vw;
+    z-index: 3;
+}
+.text-tren h3:after{
+    content: "";
+    position: absolute;
+    display: block;
+    @apply h-[7vw] w-[7vw] 2xl:h-[8vw] 2xl:w-[8vw] bottom-[90vw]  md:bottom-[26vw];
+    background: url(/images/icons/quote-right-blue.svg) no-repeat top;
+    background-size: contain;
+    mix-blend-mode: multiply;
+    right: 22%;
+
+    /*bottom: 0;*/
+}

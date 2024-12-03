@@ -604,7 +604,9 @@ onMounted(async () => {
               <h2 class="text-2xl font-bold mb-8">Overview</h2>
               <div v-html="packages.descripcion">
               </div>
-              <img :src="packages.mapa" alt="" class="rounded-2xl mt-12 w-full">
+              <div class="bg-white p-2 rounded-2xl mt-12">
+                <img :src="packages.mapa" alt="" class="rounded-2xl w-full">
+              </div>
             </article>
 
 

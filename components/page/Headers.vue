@@ -5,7 +5,7 @@
         <div class="flex items-center gap-4">
           <nuxt-link to="/">
             <div>
-              <nuxt-img src="/images/logos/logo-mapi6.svg" class="h-8"></nuxt-img>
+              <nuxt-img src="/images/logos/logo-mapi6.png" class="h-8"></nuxt-img>
             </div>
           </nuxt-link>
 <!--          <Typing></Typing>-->
@@ -30,6 +30,7 @@
         <nuxt-link to="/peru-travel-packages" class="menu-list" active-class="active">Peru Travel Packages</nuxt-link>
         <nuxt-link to="/destinations" class="menu-list" active-class="active">Destinations</nuxt-link>
         <nuxt-link to="/hotels" class="menu-list" active-class="active">Hotel</nuxt-link>
+        <nuxt-link to="/trains" class="menu-list" active-class="active">Trains</nuxt-link>
         <!--      <nuxt-link to="/#top-12" class="flex gap-2 items-center"><img src="/icons/star.svg"> Top tours</nuxt-link>-->
         <!--      <nuxt-link to="/reviews" class="flex gap-2 items-center"><img src="/icons/search.svg"> Reviews</nuxt-link>-->
 

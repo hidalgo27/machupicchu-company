@@ -259,7 +259,7 @@ onMounted(async () => {
     </div>
   </section>
 
-  <section class="container my-32">
+  <section class="container my-16 md:my-32">
     <div class="grid grid-cols-12 gap-6 items-center">
       <nuxt-link to="/destinations/machu-picchu" class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[1000px] group hidden md:block">
         <nuxt-img src="https://s3.us-west-1.amazonaws.com/gotoperu-com/destinations/1708964114497portada gotoperu machupicchu_1708964115.jpg"  class="parallax-image absolute top-0 left-0 w-full h-auto"></nuxt-img>
@@ -323,7 +323,23 @@ onMounted(async () => {
     </div>
   </section>
 
-  <section class="mt-32 bg-tertiary bg-opacity-10 hidden md:block">
+<!--  <div class="col-span-8 overflow-hidden relative parallax-container h-[920px] 2xl:h-[1100px] hidden md:block">-->
+<!--    <nuxt-img src="/images/home/angi-maja.jpg"  class="parallax-image absolute top-0 left-0 w-full h-auto"></nuxt-img>-->
+<!--  </div>-->
+
+  <section class="relative parallax-container h-[100vh] 2xl:h-[90vh] overflow-hidden">
+    <div class="absolute inset-0 bg-cover z-10">
+      <div class="container grid items-start h-full  2xl:mt-24 mt-12 text-tertiary text-opacity-70  text-tren">
+        <h3 class="px-6 md:px-72 2xl:px-52 text-sm 2xl:text-3xl   bg-opacity-90">
+          <span class="block leading-relaxed font-semibold">An essential part of your visit to Peru is the trains that will transport you to different tourist destinations. Some train routes are optional, and others are mandatory, such as the stretch to Aguas Calientes or Machu Picchu Pueblo. What better way to tour Peru than in luxury trains that will provide all the comforts inside and outside its facilities? Comfort is guaranteed when Machu Picchu Company reserves the most exclusive trains for your tours in Peru.</span>
+          <nuxt-link to="/trains" class="btn-primary mt-4 2xl:mt-6 text-sm font-normal">View more trens</nuxt-link>
+
+        </h3>
+      </div>
+    </div>
+    <nuxt-img src="/images/banners/tren-mapi.jpg" alt="" class="parallax-image w-full parallax-image object-cover h-[110vh] 2xl:h-[130vh] "></nuxt-img>
+  </section>
+  <section class=" bg-tertiary bg-opacity-10 hidden md:block">
     <div class="container  py-24 grid grid-cols-12 gap-12 items-center">
       <div class="col-span-3 text-primary pr-6">
         <div class="border-title mb-2"></div>

@@ -4,7 +4,7 @@
       <a href="#form-dream-adventure" class="">
         <div class="flex items-center">
           <span class="bg-gray-800 text-white -mr-3 py-2 px-4 rounded-lg border-2 border-secondary">Start my quote</span>
-          <nuxt-img src="/images/team/men1.webp" alt="" class="w-16 h-16 rounded-full bg-white object-cover object-top border-2 border-secondary"></nuxt-img>
+          <nuxt-img src="/images/team/fiore3.png" alt="" class="w-16 h-16 rounded-full bg-white object-cover object-top border-2 border-secondary"></nuxt-img>
         </div>
       </a>
     </div>
