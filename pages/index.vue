@@ -332,7 +332,7 @@ onMounted(async () => {
       <div class="container grid items-start h-full  2xl:mt-24 mt-12 text-tertiary text-opacity-70  text-tren">
         <h3 class="px-6 md:px-72 2xl:px-52 text-sm 2xl:text-3xl   bg-opacity-90">
           <span class="block leading-relaxed font-semibold">An essential part of your visit to Peru is the trains that will transport you to different tourist destinations. Some train routes are optional, and others are mandatory, such as the stretch to Aguas Calientes or Machu Picchu Pueblo. What better way to tour Peru than in luxury trains that will provide all the comforts inside and outside its facilities? Comfort is guaranteed when Machu Picchu Company reserves the most exclusive trains for your tours in Peru.</span>
-          <nuxt-link to="/trains" class="btn-primary mt-4 2xl:mt-6 text-sm font-normal">View more trens</nuxt-link>
+          <nuxt-link to="/trains" class="btn-primary mt-4 2xl:mt-6 text-sm font-normal">View more trains</nuxt-link>
 
         </h3>
       </div>
